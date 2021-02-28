@@ -1,13 +1,21 @@
 
 
-> **Warning**: use PyQt5 in version 5.15.2 or > (**pip install pyside2==5.15.2**)!
+> **Message**: Please see the below in order to navigate the attached files!
 
 
 Project created using Python, Qt Designer and PySide2.
 
-# REQUIREMENTS:
+# Reporting files:
 > ```sh
-> pip install pyqt5   ##PySide2 should work as well
+> STAT_REV.py   ##STAT REV implementation 
+> STAT_AUM.py   ##STAT AUM implementation
+> EIB_AUM.py   ##EIB generation for STAT AUM
+> EIB_REV.py   ##EIB generation for STAT REV
+> ```
+> # Comparator:
+> ```sh
+> web.comparator.py  ##Implementation of comparator
+> 
 > ```
 > PySide2 and PyQt5 in version 5.15.1 **are causing problems** due to several updates in process.
 
