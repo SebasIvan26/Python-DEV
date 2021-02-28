@@ -14,10 +14,10 @@ Project created using Python, Qt Designer and PySide2.
 > ```
 > # Comparator:
 > ```sh
-> web.comparator.py  ##Implementation of comparator
+> web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
 > 
 > ```
-> PySide2 and PyQt5 in version 5.15.1 **are causing problems** due to several updates in process.
+> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights.
 
 # RUN FILE:
 main.py
