@@ -12,7 +12,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > ```sh
 > STAT_REV.py   ##STAT REV implementation 
 > STAT_AUM.py   ##STAT AUM implementation
-> EIB_AUM.py   ##EIB generation for STAT AUM
+> EIB_AUM.py   ##EIB generation for STAT AUM 
 > EIB_REV.py   ##EIB generation for STAT REV
 > ```
 > # Comparator:
@@ -21,6 +21,12 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > 
 > ```
 > This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents
+>  # Cash Finder:
+> ```sh
+> beta  ##Implementation of Cash Finder
+> 
+> ```
+> This implementation should be able to analyze any Unreconciled Cash Items obtained from WKDAY and instantly identify it's support(Email body, Email attachment, Wire request folder)
 
 # RUN FILE:
 main.py
