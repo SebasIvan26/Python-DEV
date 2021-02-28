@@ -6,7 +6,7 @@
 
 
 
-Project created using Python, Qt Designer and PySide2.
+GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also uploaded my Virtual Environment to provide more clarity on the multitude of modules and dependencies that were used.
 
 # Reporting files:
 > ```sh
