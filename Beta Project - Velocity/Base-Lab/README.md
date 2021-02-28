@@ -17,7 +17,7 @@ Project created using Python, Qt Designer and PySide2.
 > web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
 > 
 > ```
-> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights.
+> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents
 
 # RUN FILE:
 main.py
