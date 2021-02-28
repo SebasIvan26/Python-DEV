@@ -15,6 +15,10 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > EIB_AUM.py   ##EIB generation for STAT AUM 
 > EIB_REV.py   ##EIB generation for STAT REV
 > ```
+>*STAT AUM and STAT REV are automatically generated. Both files are able to automatically detect whether there is error in file provided by Rev. In addtion to the output, references to cells are added in order to provide trails for the calculations.
+>
+> *EIB for AUM and REV are both contingent upon the STAT excel files. The accounting date and all other fileds (ex:memo) are adjusted automatically. No intervention is needed
+
 > # Comparator:
 > ```sh
 > web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
