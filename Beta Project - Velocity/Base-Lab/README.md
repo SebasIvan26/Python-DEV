@@ -1,15 +1,26 @@
 
 
-> **Warning**: use PyQt5 in version 5.15.2 or > (**pip install pyside2==5.15.2**)!
+> **Message**: For transparency, I've also inserted comments to accompany each functions. In the advent that an implementation to any of these files remain elusive, I'll do my best to incorporate more documentation/comments
+> 
+> Please see the below in order to navigate the attached files!
 
 
-Project created using Python, Qt Designer and PySide2.
 
-# REQUIREMENTS:
+GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also uploaded my Virtual Environment to provide more clarity on the multitude of modules and dependencies that were used.
+
+# Reporting files:
 > ```sh
-> pip install pyqt5   ##PySide2 should work as well
+> STAT_REV.py   ##STAT REV implementation 
+> STAT_AUM.py   ##STAT AUM implementation
+> EIB_AUM.py   ##EIB generation for STAT AUM
+> EIB_REV.py   ##EIB generation for STAT REV
 > ```
-> PySide2 and PyQt5 in version 5.15.1 **are causing problems** due to several updates in process.
+> # Comparator:
+> ```sh
+> web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
+> 
+> ```
+> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents
 
 # RUN FILE:
 main.py
