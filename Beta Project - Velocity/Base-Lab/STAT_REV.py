@@ -78,7 +78,8 @@ def calc_isvalid():
         if 'GRAND' in k:
             continue
         pool_Totals += v 
-    
+    print(f'Pool Totals: {pool_Totals}')
+    print(dicNums['GRAND_TOTAL'])
     return format(pool_Totals, '.3f') == format(dicNums['GRAND_TOTAL'], '.3f')
 
 
@@ -98,11 +99,11 @@ def applyFormat1(size,ws):
         column += 1
 
     #Change number to comma-style
-    for row in range(1, 100):
+    for row in range(1, 400):
         ws["E{}".format(row)].number_format = '#,##0.00_-'
         ws["F{}".format(row)].number_format = '#,##0.00_-'
         ws["G{}".format(row)].number_format = '#,##0.00_-'
-        ws["H{}".format(row)].number_format = '#,##0.00_-'
+        ws["H{}".format(row)].number_format = '#,##0.000_-'
         ws["I{}".format(row)].number_format = '#,##0.00_-'
         ws["J{}".format(row)].number_format = '#,##0.00_-'
         ws["L{}".format(row)].number_format = '#,##0.00_-'
@@ -142,7 +143,7 @@ def checkAndLoad(source):
         ws = wb[ex_wrpp]
         ws2 = wb[wrpp]
         WRPP_SHEET_NAME = wrpp + '!'
-    except openpyxl.utils.exceptions.InvalidFileException:
+    except Exception:
         print("Unable to load file....Please use Valid file format")
         SystemExit()
     except FileNotFoundError:
@@ -150,7 +151,10 @@ def checkAndLoad(source):
         SystemExit()
     print("Source file loaded...")
     
-    return [wb, ws, ws2]
+    try:
+        return [wb, ws, ws2]
+    except Exception:
+        print("Error in returning workbook")
 
 def checkAndSave(wb,dest):
     try:
@@ -213,21 +217,23 @@ def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
     #CHECK FILE IS LOADED PROPERLY
     wbws = checkAndLoad(destination)
 
-    wb = wbws[0]
-    ws1 = wbws[1]
-    ws2 = wbws[2]
-
+    try:
+        wb = wbws[0]
+        ws1 = wbws[1]
+        ws2 = wbws[2]
+    except Exception:
+        print("Error in processing file....")
 
     #INSERT EXCEL NUMBERS INTO DATA STRUCTURES TO ORGANIZE (ORGANIZED BY POOLS)
     dic = processFromSheet2(ws2)
     dicto = processFromSheet1(ws1, dic)
     writeToFile(dicto, ws1)
     checkAndSave(wb, destination)
+    
 
     #######Returning dic in order for STAT REV data to be accessible for EIB Generation
     if ACTIVATE_EIB:
-        pass
-        #eib_aum.main(dicNums, bucketDestPath)
+        eib_rev.main(dicNums, bucketDestPath)
     else:
         pass
 

@@ -53,6 +53,9 @@ class Functions(MainWindow):
         try:
             if not bucketSourcePath or not bucketDestPath:
                 QMessageBox.information(self, "Information", "Plese enter Prelim File")
+            elif len(bucketSourcePath) == 0 or len(bucketDestPath) == 0:
+                QMessageBox.information(self, "Information", "Plese enter valid file path")
+                return
         except Exception:
             QMessageBox.information(self, "Information", "Plese enter Prelim File/Saving location")
             return
@@ -71,7 +74,7 @@ class Functions(MainWindow):
             self.ui.plainTextEdit.insertPlainText(bucketDestPath +'\n\n')            
 
         elif not AUM_REV:
-            rev.main(bucketSourcePath, bucketDestPath)
+            rev.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
             self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
             self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
             self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            

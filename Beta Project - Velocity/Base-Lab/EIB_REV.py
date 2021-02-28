@@ -7,11 +7,6 @@ from openpyxl.utils.cell import get_column_letter
 from datetime import date, timedelta
 import STAT_REV as rev
 
-checktotal = 0
-debit_Col = 9
-credit_Col = 10
-bu_Data_Audit = {'BU_10500': 'DOMESTIC', 'BU_21501': 'TOKYO', 'BU_21001': 'SINGAPORE', 'BU_16001': 'HONG_KONG','BU_15501': 'LONDON'}
-
 def getPrevMonthEndDate():
     #ex: 2021-01-31 **Changes to 1/31/21 when inserted into excel
     last_day_of_prev_month = date.today().replace(day=1) - timedelta(days=1)
@@ -99,7 +94,7 @@ def updateImportAccountingTab(ws):
 
     for row in ws.iter_rows(min_row=row_loc, max_row=6, min_col=1, max_col=23, values_only=True):
         ws.cell(row=row_loc, column=14).value = getPrevMonthEndDate()
-        ws.cell(row=row_loc, column=16).value = getPrevMonthYear() + " STAT Revenue"
+        ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT REVENUE"
         row_loc += 1
 
 # {'GLOBAL/INTERNATIONAL_EQUITY': ['TOK', 1684243478.0225258]}
@@ -111,38 +106,26 @@ def updateEntryLines(dic, ws):
     for row in ws.iter_rows(min_row=row_loc, max_row=16, min_col=1, max_col=46, values_only=True):
         if row[4]:
             ex_ref_ID = str(row[16]).upper()
-            BU = str(row[30]).upper()
             ledger = str(row[5])
             if 'CORE_EQUITY' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(aum.get_core_equity_bos(dic)/1000,2)
+                ws.cell(row=row_loc, column=15).value = round(dic['CORE_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'COMPLEX_ALPHA' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(aum.get_complex_alpha_bos(dic)/1000,2)
+                ws.cell(row=row_loc, column=15).value = round(dic['COMPLEX_ALPHA_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'SPECIAL_EQUITY' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(aum.get_special_equity(dic)/1000,2)
+                ws.cell(row=row_loc, column=15).value = round(dic['SPECIAL_EQUITY_TOTAL'],2) if 'SPECIALTY_EQUITY_TOTAL' not in dic else\
+                    round(dic['SPECIALTY_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'FIXED_INCOME' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(aum.get_fixed_income_bos(dic)/1000,2)
+                ws.cell(row=row_loc, column=15).value = round(dic['FIXED_INCOME_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
-            if 'GLOBAL_INTL' in ex_ref_ID and 'TOKYO' in bu_Data_Audit[BU] :
-                ws.cell(row=row_loc, column=15).value = round(aum.get_global_tok(dic)/1000,2)
+            if 'GLOBAL_INTL' in ex_ref_ID:
+                ws.cell(row=row_loc, column=15).value = round(dic['GLOBAL/INTERNATIONAL_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
-            if 'GLOBAL_INTL' in ex_ref_ID and 'SINGAPORE' in bu_Data_Audit[BU] :
-                ws.cell(row=row_loc, column=15).value = round(aum.get_global_sing(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
-            if 'GLOBAL_INTL' in ex_ref_ID and 'HONG_KONG' in bu_Data_Audit[BU] :
-                ws.cell(row=row_loc, column=15).value = round(aum.get_global_hk(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
-            if 'GLOBAL_INTL' in ex_ref_ID and 'DOMESTIC' in bu_Data_Audit[BU] and '79998' in ledger:
-                ws.cell(row=row_loc, column=15).value = round(aum.get_global_domestic(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
-            if 'GLOBAL_INTL' in ex_ref_ID and 'DOMESTIC' in bu_Data_Audit[BU] and '79997' in ledger:
-                ws.cell(row=row_loc, column=15).value = round(aum.GLOBAL_OPPORTUNISTIC/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue - OP IVT"
             if '79993' in ledger:
-                ws.cell(row=row_loc, column=14).value = round(aum.GRAND_TOTAL/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
+                ws.cell(row=row_loc, column=14).value = round(dic['GRAND_TOTAL'],2)
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue - Contra Revenue"
         row_loc += 1
 
 def main(dic, bucketDestPath):

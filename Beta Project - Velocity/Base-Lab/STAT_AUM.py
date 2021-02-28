@@ -246,14 +246,18 @@ def checkAndLoad(source):
     try:
         wb = load_workbook(source)
         ws = wb.active
-    except openpyxl.utils.exceptions.InvalidFileException:
+    except Exception:
         print("Unable to load file....Please use Valid file format")
         SystemExit()
     except FileNotFoundError:
         print('Unable to load file....Please enter a valid file path')
         SystemExit()
     print("Source file loaded...")
-    return [wb, ws]
+
+    try:
+        return [wb, ws]
+    except Exception:
+        print("Error in returning workbook")
 
 
 def processFromSheet(ws):
@@ -357,8 +361,11 @@ def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
     #CHECK FILE IS LOADED PROPERLY
     wbws = checkAndLoad(destination)
 
-    wb = wbws[0]
-    ws = wbws[1]
+    try:
+        wb = wbws[0]
+        ws = wbws[1]
+    except Exception:
+        print("Error in loading file....")
 
     #INSERT EXCEL NUMBERS INTO DATA STRUCTURES TO ORGANIZE (ORGANIZED BY POOLS)
     dic = processFromSheet(ws)
