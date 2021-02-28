@@ -1,11 +1,9 @@
 # GA-Lab
 
+Source Code
 
-> **Warning**: use PyQt5 in version 5.15.2 or > (**pip install pyside2==5.15.2**)!
+> **Notice**: This repository contains the Graphical User Interface codes as well as all the algorithms underpinning the various reportings and processes
 
-
-Source code for GA Lab. 
-##> **Notice**This repository contains the Graphical User Interface codes as well as all the algorithms underpinning the various reportings and processes
 
 # To Start:
 > ```sh
