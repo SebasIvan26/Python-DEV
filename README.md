@@ -7,5 +7,5 @@ Source Code
 
 # To Start:
 > ```sh
-> Please click on Beta Project - velocity/Base-Lab ##PySide2 should work as well
+> Please click on Beta Project - velocity/Base-Lab 
 > ```
