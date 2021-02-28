@@ -157,7 +157,7 @@ def applyFormat(size,ws):
         ws["E{}".format(row)].number_format = '#,##0.00_-'
         ws["F{}".format(row)].number_format = '#,##0.00_-'
         ws["G{}".format(row)].number_format = '#,##0.00_-'
-        ws["H{}".format(row)].number_format = '#,##0.00_-'
+        ws["H{}".format(row)].number_format = '#,##0.000_-'
         ws["N{}".format(row)].number_format = '#,##0.00_-'
         ws["O{}".format(row)].number_format = '#,##0.00_-'
    # ecell.number_format = 
@@ -392,10 +392,6 @@ def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
 if __name__ == "__main__":
     main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
 
-
-    #bucketSourcePath = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/Bucket Report(raw).xlsx'
-    #bucketDestPath = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/09bucks'
-    #main(bucketSourcePath, bucketDestPath)
 
 
 
