@@ -1,3 +1,13 @@
+################################################################################
+##
+## BY: Sebastien St Vil
+##
+## This project can be used freely for all uses, any information in the visual
+## interface (GUI) can be modified without any implication.
+##
+##
+################################################################################
+
 import sys as Sys
 from openpyxl.workbook import Workbook
 from openpyxl import load_workbook
@@ -5,6 +15,7 @@ from openpyxl.styles import Border, Side, Font, Alignment
 from openpyxl.utils.cell import get_column_letter
 from openpyxl.styles import Font
 import pyexcel as p
+import EIB_AUM as eib_aum
 
 GLOBAL_OPPORTUNISTIC, GRAND_TOTAL = 0, 0
 dicNums = {}
@@ -42,7 +53,7 @@ def get_complex_alpha_bos(dic):
     amount = 0
     for k, v in dic.items():
         for array in v:
-            if k == "COMPLEX_ALPHA" and "BOS" in array[0] :
+            if k == "COMPLEX_ALPHA" and ("BOS" in array[0] or "RAD" in array[0]): ##Previous prelims used to have a RAD location
                 amount = amount + array[1]
     return amount
 
@@ -106,7 +117,7 @@ def get_special_equity(dic):
     amount = 0
     for k, v in dic.items():
         for array in v:
-            if k == "SPECIAL_EQUITY" and ("BOS" in array[0] or "RAD" in array[0]):
+            if (k == "SPECIAL_EQUITY" or k == "SPECIALTY_EQUITY") and ("BOS" in array[0] or "RAD" in array[0]): ##Previous called "Specialty Equity"
                 #Since we might surpas the rows which contain values, we're ensuring that we're only counting numbers
                 if array[1]:
                     amount = amount + array[1]
@@ -142,7 +153,7 @@ def applyFormat(size,ws):
         column += 1
 
     #Change number to comma-style
-    for row in range(1, 100):
+    for row in range(1, 400):
         ws["E{}".format(row)].number_format = '#,##0.00_-'
         ws["F{}".format(row)].number_format = '#,##0.00_-'
         ws["G{}".format(row)].number_format = '#,##0.00_-'
@@ -207,7 +218,7 @@ def writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY,
         ws[co] ='=ROUND('+cn+'/1000,2)'
 
 
-    applyFormat(20,ws)
+    applyFormat(23,ws)
     ws['N19'] = '=SUM(N8:N16)'
     ws['O19'] = '=SUM(O8:O16)'
     ws['N20'] = grand_Total_position
@@ -252,6 +263,7 @@ def processFromSheet(ws):
     global GRAND_TOTAL
     global grand_Total_position
     row_loc = 8
+    loc, pool = '', ''
 
     for row in ws.iter_rows(min_row=8, max_row=300, min_col=1, max_col=5, values_only=True):
         if row[0]:
@@ -265,8 +277,9 @@ def processFromSheet(ws):
             #Get Opportunistic before "Account Names" are unavailable when tuple gets sliced in the below
             if row[3]:
                 op = row[3].lower()
-                if 'opportunistic invstmnt' in op:
+                if 'opportunistic invstmnt' in op or 'opportunistic invsmnt'in op: #Account for the fact that Opportunistic is written inconistently in prelim
                     GLOBAL_OPPORTUNISTIC += row[4]
+                    print(GLOBAL_OPPORTUNISTIC)
 
             #Collecting Column 0 and 1
             p1 = row[:2] 
@@ -279,11 +292,11 @@ def processFromSheet(ws):
             new_row = arrangeStrings(new_row) 
             
             #If there is a value in Location, Location variable will now contain the value 
-            if new_row[1]: 
+            if new_row[1] and 'BLANK' not in new_row[1].upper(): 
                 loc = new_row[1].upper()
                 if 'TOTAL' in loc:
                     continue  
-            
+
             # example loc = ['TOK', 1684243478.0225258]
             lst.append(loc)
             lst.append(new_row[2])
@@ -329,13 +342,13 @@ def calculateFromDic(dic,ws):
     GLOBAL_SINGAPORE, GLOBAL_HONGKONG, ws)
 
 
-def main(bucketSourcePath, bucketDestPath):
+def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
 
     #########################SOURCE FILE LOCATION#################################################
     source = bucketSourcePath
 
     #########################DESTINATION FILE LOCATION#################################################
-    destination = bucketDestPath +'.xlsx'
+    destination = bucketDestPath +'.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath
 
     #XLS to XLSX Converter - If file is Excel 97-2003 default:Disactivated
     #Turn True to activate
@@ -359,15 +372,22 @@ def main(bucketSourcePath, bucketDestPath):
     #CHECK FILE IS SAVED PROPERLY
     checkAndSave(wb, destination)
 
+
+##################This activates only if EIB box is checked #######################
+    if ACTIVATE_EIB:
+        eib_aum.main(dic, bucketDestPath)
+    else:
+        pass
+
     #######Returning dic in order for STAT AUM data to be accessible for EIB Generation
     return dic
 
 if __name__ == "__main__":
-    main(bucketSourcePath, bucketDestPath)
+    main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
 
 
-    #bucketSourcePath = '/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Custom - GIT pulls copy/Base-master/Bucket Report(raw).xlsx'
-    #bucketDestPath = '/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Custom - GIT pulls copy/Base-master/bucketRes'
+    #bucketSourcePath = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/Bucket Report(raw).xlsx'
+    #bucketDestPath = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/09bucks'
     #main(bucketSourcePath, bucketDestPath)
 
 

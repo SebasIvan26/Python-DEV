@@ -58,13 +58,12 @@ class Functions(MainWindow):
             return
         
         if ACTIVATE_EIB:
-            self.ui.plainTextEdit.insertPlainText("EIB auto-generation is not yet available.\n\n")
-            print('EIB is Activated')
+            self.ui.plainTextEdit.insertPlainText("EIB auto-generation is activated.\n\n")
         else:
-            print('EIB is not Activated')
+            self.ui.plainTextEdit.insertPlainText("EIB auto-generation is not activated.\n\n")
 
         if AUM_REV:
-            aum.main(bucketSourcePath, bucketDestPath)
+            aum.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
             self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
             self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
             self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            

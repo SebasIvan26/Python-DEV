@@ -200,7 +200,7 @@ def main(bucketSourcePath, bucketDestPath):
     source = bucketSourcePath
 
     #########################DESTINATION FILE LOCATION#################################################
-    destination = bucketDestPath +'.xlsx'
+    destination = bucketDestPath +'.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath
 
     #XLS to XLSX Converter - If file is Excel 97-2003 default:Disactivated
     #Turn True to activate
