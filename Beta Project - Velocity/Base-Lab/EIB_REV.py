@@ -5,7 +5,7 @@ from openpyxl.workbook import Workbook
 from openpyxl import load_workbook
 from openpyxl.utils.cell import get_column_letter
 from datetime import date, timedelta
-import STAT_AUM as aum
+import STAT_REV as rev
 
 checktotal = 0
 debit_Col = 9
@@ -47,7 +47,7 @@ def getStart(ws):
     return dataPlacement + 1
 
 def getAUMTemplate(source):
-    url = "https://github.com/SebasIvan26/testinghello/blob/master/Templates/AUM%20EIB%20Template.xlsx?raw=true"
+    url = "https://github.com/SebasIvan26/testinghello/blob/master/Templates/REV%20EIB%20Template.xlsx?raw=true"
 
     username = 'kseb0@hotmail.com'
     token =  '538cd0c05c0207b17a43ca6324f12191a73bb696'
@@ -99,7 +99,7 @@ def updateImportAccountingTab(ws):
 
     for row in ws.iter_rows(min_row=row_loc, max_row=6, min_col=1, max_col=23, values_only=True):
         ws.cell(row=row_loc, column=14).value = getPrevMonthEndDate()
-        ws.cell(row=row_loc, column=16).value = getPrevMonthYear() + " STAT AUM"
+        ws.cell(row=row_loc, column=16).value = getPrevMonthYear() + " STAT Revenue"
         row_loc += 1
 
 # {'GLOBAL/INTERNATIONAL_EQUITY': ['TOK', 1684243478.0225258]}
@@ -115,41 +115,41 @@ def updateEntryLines(dic, ws):
             ledger = str(row[5])
             if 'CORE_EQUITY' in ex_ref_ID:
                 ws.cell(row=row_loc, column=15).value = round(aum.get_core_equity_bos(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'COMPLEX_ALPHA' in ex_ref_ID:
                 ws.cell(row=row_loc, column=15).value = round(aum.get_complex_alpha_bos(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'SPECIAL_EQUITY' in ex_ref_ID:
                 ws.cell(row=row_loc, column=15).value = round(aum.get_special_equity(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'FIXED_INCOME' in ex_ref_ID:
                 ws.cell(row=row_loc, column=15).value = round(aum.get_fixed_income_bos(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID and 'TOKYO' in bu_Data_Audit[BU] :
                 ws.cell(row=row_loc, column=15).value = round(aum.get_global_tok(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID and 'SINGAPORE' in bu_Data_Audit[BU] :
                 ws.cell(row=row_loc, column=15).value = round(aum.get_global_sing(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID and 'HONG_KONG' in bu_Data_Audit[BU] :
                 ws.cell(row=row_loc, column=15).value = round(aum.get_global_hk(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID and 'DOMESTIC' in bu_Data_Audit[BU] and '79998' in ledger:
                 ws.cell(row=row_loc, column=15).value = round(aum.get_global_domestic(dic)/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID and 'DOMESTIC' in bu_Data_Audit[BU] and '79997' in ledger:
                 ws.cell(row=row_loc, column=15).value = round(aum.GLOBAL_OPPORTUNISTIC/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM - OP IVT"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue - OP IVT"
             if '79993' in ledger:
                 ws.cell(row=row_loc, column=14).value = round(aum.GRAND_TOTAL/1000,2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
         row_loc += 1
 
 def main(dic, bucketDestPath):
     system = platform.system() ##Windows or MAC
     #########################SOURCE FILE LOCATION#################################################
 
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/EIBTemp.xlsx' if system == 'Darwin' else 'Put file path here'
+    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/REVEIBTemp.xlsx' if system == 'Darwin' else 'Put file path here'
 
     #########################DESTINATION FILE LOCATION#################################################
     destination = source
@@ -167,7 +167,7 @@ def main(dic, bucketDestPath):
     updateEntryLines(dic, ws2)
     applyFormat(ws1)
     #dicto = processFromSheet1(ws1, dic)
-    bucketDestPath = bucketDestPath +'_AUM_EIBUpload.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath.replace('.xlsx', '_AUM_EIBUpload.xlsx')
+    bucketDestPath = bucketDestPath +'_REV_EIBUpload.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath.replace('.xlsx', '_REV_EIBUpload.xlsx')
     checkAndSave(wb, bucketDestPath)
 
 

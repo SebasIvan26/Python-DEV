@@ -5,6 +5,7 @@ from openpyxl.styles import Border, Side, Font, Alignment
 from openpyxl.utils.cell import get_column_letter
 from openpyxl.styles import Font
 import pyexcel as p
+import EIB_REV as eib_rev
 
 WRPP_SHEET_NAME = ""
 dicNums = {} #Holds the results for the pools, noot the formulas 
@@ -194,7 +195,7 @@ def processFromSheet1(ws, dic):
         row_loc += 1
     return dicto #This returns references to results in Column J
 
-def main(bucketSourcePath, bucketDestPath):
+def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
 
     #########################SOURCE FILE LOCATION#################################################
     source = bucketSourcePath
@@ -224,7 +225,13 @@ def main(bucketSourcePath, bucketDestPath):
     checkAndSave(wb, destination)
 
     #######Returning dic in order for STAT REV data to be accessible for EIB Generation
+    if ACTIVATE_EIB:
+        pass
+        #eib_aum.main(dicNums, bucketDestPath)
+    else:
+        pass
+
     return dicNums
 
 if __name__ == "__main__":
-    main(bucketSourcePath, bucketDestPath)
+    main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
