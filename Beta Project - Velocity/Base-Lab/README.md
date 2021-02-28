@@ -3,8 +3,6 @@
 > **Warning**: use PyQt5 in version 5.15.2 or > (**pip install pyside2==5.15.2**)!
 
 
-![image_1](https://user-images.githubusercontent.com/60605512/82736094-50887300-9cfd-11ea-8e9a-c2fbbf97d983.PNG)
-
 Project created using Python, Qt Designer and PySide2.
 
 # REQUIREMENTS:
