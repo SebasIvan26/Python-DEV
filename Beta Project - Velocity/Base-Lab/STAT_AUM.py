@@ -117,7 +117,7 @@ def get_special_equity(dic):
     amount = 0
     for k, v in dic.items():
         for array in v:
-            if (k == "SPECIAL_EQUITY" or k == "SPECIALTY_EQUITY") and ("BOS" in array[0] or "RAD" in array[0]): ##Previous called "Specialty Equity"
+            if (k == "SPECIAL_EQUITY" or k == "SPECIALTY_EQUITY") and ("BOS" in array[0] or "RAD" in array[0]): ##Previously called "Specialty Equity"
                 #Since we might surpas the rows which contain values, we're ensuring that we're only counting numbers
                 if array[1]:
                     amount = amount + array[1]
