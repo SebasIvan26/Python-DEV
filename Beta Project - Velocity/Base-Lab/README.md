@@ -26,7 +26,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > beta  ##Implementation of Cash Finder
 > 
 > ```
-> This implementation should be able to analyze any Unreconciled Cash Items obtained from WKDAY and instantly identify it's support(Email body, Email attachment, Wire request folder)
+> This implementation should be able to analyze any Unreconciled Cash Items obtained from WKDAY and instantly identify and locate it's support(Email body, Email attachment, Wire request folder)
 
 # RUN FILE:
 main.py
