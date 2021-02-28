@@ -23,7 +23,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents
 >  # Cash Finder:
 > ```sh
-> beta  ##Implementation of Cash Finder
+> beta (not yet written)  ##Implementation of Cash Finder
 > 
 > ```
 > This implementation should be able to analyze any Unreconciled Cash Items obtained from WKDAY and instantly identify and locate it's support(Email body, Email attachment, Wire request folder)
