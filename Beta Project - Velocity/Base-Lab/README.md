@@ -18,7 +18,5 @@ Project created using Python, Qt Designer and PySide2.
 # RUN FILE:
 main.py
 
-# ADD MENUS
-![add-MENUS](https://user-images.githubusercontent.com/60605512/94625100-56372c00-028e-11eb-978e-22165d8f77c8.png)
 
 
