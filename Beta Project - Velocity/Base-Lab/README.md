@@ -17,14 +17,15 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > ```
 >*STAT AUM and STAT REV are automatically generated. Both files are able to automatically detect whether there is error in file provided by Rev. In addtion to the output, references to cells are added in order to provide trails for the calculations.
 >
-> *EIB for AUM and REV are both contingent upon the STAT excel files. The accounting date and all other fileds (ex:memo) are adjusted automatically. No intervention is needed
+> *EIB for AUM and REV are both contingent upon the STAT excel files. The accounting date and all other fileds (ex: memo) are automatically adjusted. No intervention is needed.
 
 > # Comparator:
 > ```sh
 > web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
 > 
 > ```
-> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents
+> This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. THe parser supports PDF, Excel and Word documents.
+> 
 >  # Cash Finder:
 > ```sh
 > beta (not yet written)  ##Implementation of Cash Finder
