@@ -43,7 +43,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > The attached code offers the ability to directly connect to Workday's API from GA-Lab using web services. This means that any CR will be directly accessible from the app by completely bypassing the website. Any change in the prompts such as (date, entity, etc) can be easily accessed by modifying the link. 
 > ex: www.wd.com/Import/Singapore/0131 --> Altough the fields in the links corresponding to the prompts won't be quite clearly delineated as in this example, there will be ways to access a specific report by manipulating the link so that its output reflects the desired report.
 > 
-> **Where does this leads to ?** 
+> **Where does this lead to ?** 
 > 
 > GA-Lab would not be the only platform capable of accessing the report within the confines of a desktop App but also Microsoft Excel. This would signify that reports that are typically copy/pasted innumerable times such as the TB on the recon template fall in that category thereby giving ground to further optimize the recon template. The only existing drawback, based on my current tests/understanding, is the unavoidable fact that only advanced reports are accessible through workday services. As it stands TB is a composite report, therefore having recourse to such a feature would require deliberate efforts in transcribing that CR(composite) to a CR(advanced).
 > 
