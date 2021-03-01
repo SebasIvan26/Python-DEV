@@ -51,8 +51,12 @@ class MainWindow(QMainWindow):
             self.ui.label_welcome_usr.setText('Welcome,   ' + name_database[getpass.getuser()])
         else:
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
-        
-        self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+
+        try:
+            self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+        except Exception:
+            print("error loading time")
+
         self.setWindowTitle('Main Window - GA Lab')
         UIFunctions.labelTitle(self, 'Main Window - GA Lab')
         UIFunctions.labelDescription(self, 'GA LAB')
@@ -214,7 +218,12 @@ class MainWindow(QMainWindow):
     ########################################################################
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
-        self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+
+        try:
+            self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+        except Exception:
+            print("error loading time")
+            
         if event.buttons() == Qt.LeftButton:
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
