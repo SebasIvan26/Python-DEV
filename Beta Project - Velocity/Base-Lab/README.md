@@ -31,7 +31,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > beta (not yet written)  ##Implementation of Cash Finder 
 > 
 > ```
->As of now, implementation remains a challenge due to all emails being encrypted consequently impeding direct access to outlook emails via code however other methods will be explored to circumvent this momentary obstacle.  
+>As of now, the implementation remains a challenge due to all emails being encrypted consequently impeding direct access to outlook emails via code however other methods will be explored to circumvent this momentary obstacle.  
 
 > Function: This implementation should be able to analyze any Unreconciled Cash Items obtained from WKDAY and instantly identify and locate the origins of its support(Email body, Email attachment, Wire request folder, etc)
 > 
