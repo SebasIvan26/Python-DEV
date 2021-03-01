@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
 
         ## SET ==> WINDOW TITLE
         name = getpass.getuser()
-        name_database = {'sstvil': 'Seb', 'sebastienstvil': 'Seb', 'slittle': 'Scott', 'eguillen': 'Elzé', 'millens': 'Sarah'}
+        name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'slittle': 'Scott', 'eguillen': 'Elzé', 'millens': 'Sarah'}
         if name in name_database:
             self.ui.label_welcome_usr.setText('Welcome,   ' + name_database[getpass.getuser()])
         else:
@@ -223,7 +223,7 @@ class MainWindow(QMainWindow):
             self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
         except Exception:
             print("error loading time")
-            
+
         if event.buttons() == Qt.LeftButton:
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
