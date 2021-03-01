@@ -41,7 +41,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > 
 > ```
 > The attached code offers the ability to directly connect to Workday's API from GA-Lab using web services. This means that any CR will be directly accessible from the app by completely bypassing the website. Any change in the prompts such as (date, entity, etc) can be easily accessed by modifying the link. 
-> ex: www.wd.com/Import/Singapore/0131 --> Altough the fields in the links corresponding to the prompts won't be quite clearly delineated just like in this example, there will be ways to access a specific report by manipulating the link so that its output reflects the desired report.
+> ex: www.wd.com/Import/Singapore/0131 --> Altough the fields in the links corresponding to the prompts won't be quite clearly delineated as in this example, there will be ways to access a specific report by manipulating the link so that its output reflects the desired report.
 > 
 > **Where does this leads to ?** 
 > 
