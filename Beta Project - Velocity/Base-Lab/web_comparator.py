@@ -21,7 +21,8 @@ def generateDiff(path1, path2):
 
     delta_html = HtmlDiff().make_file(textPDF1, textPDF2)
 
-    dest = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Custom - GIT pulls copy/Base-master/Testing/pdf_Tests/diff.html' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\diff.html'
+    dest = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/pdf_Tests/diff.html'\
+         if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\diff.html'
     with open(dest,'w') as f:
         f.write(delta_html)
 

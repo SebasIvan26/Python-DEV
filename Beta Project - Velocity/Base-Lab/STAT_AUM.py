@@ -89,6 +89,14 @@ def get_global_hk(dic):
                 amount = amount + array[1]
     return amount
 
+def get_global_london(dic):
+    amount = 0
+    for k, v in dic.items():
+        for array in v:
+            if k == "GLOBAL/INTERNATIONAL_EQUITY" and "LON" in array[0] :
+                amount = amount + array[1]
+    return amount
+
 def get_global_sf(dic):
     amount = 0
     for k, v in dic.items():
@@ -128,14 +136,14 @@ def get_global_domestic(dic):
 
 def calc_isvalid(dic):
     CHECK_TOTAL = get_core_equity_bos(dic) + get_complex_alpha_bos(dic) + get_fixed_income_bos(dic) + get_special_equity(dic) \
-        + get_global_domestic(dic) + GLOBAL_OPPORTUNISTIC + get_global_tok(dic) + get_global_sing(dic) + get_global_hk(dic)
+        + get_global_domestic(dic) + GLOBAL_OPPORTUNISTIC + get_global_tok(dic) + get_global_sing(dic) + get_global_hk(dic) + get_global_london(dic)
     print('Numbers are being verified....')
     a = CHECK_TOTAL
     b = GRAND_TOTAL
-    print(a)
-    print(b)
+    print(f'Check Total: {a}')
+    print(f'Check Total: {b}')
     print(a == b)
-    return format(CHECK_TOTAL, '.3f') == format(GRAND_TOTAL, '.3f')
+    return format(CHECK_TOTAL, '.2f') == format(GRAND_TOTAL, '.2f')
 
 def getStart(ws):
     dataPlacement = 1 ##Variable to determine where data starts, essentially the placement
@@ -164,11 +172,11 @@ def applyFormat(size,ws):
 
 def writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY, 
             GLOBAL_DOMESTIC, GLOBAL_OPPORTUNISTIC, GLOBAL_TOKYO,\
-            GLOBAL_SINGAPORE, GLOBAL_HONGKONG, ws):
+            GLOBAL_SINGAPORE, GLOBAL_HONGKONG, GLOBAL_LONDON, ws):
     
     result = {'COMPLEX_ALPHA': COMPLEX_ALPHA, 'CORE_EQUITY': CORE_EQUITY, 'FIXED_INCOME': FIXED_INCOME, 'SPECIAL_EQUITY': SPECIAL_EQUITY,
     'GLOBAL_INTL_EQUITY_DOMESTIC': GLOBAL_DOMESTIC, 'GLOBAL_INTL_EQUITY_OPPORTUNISTIC': GLOBAL_OPPORTUNISTIC, 'GLOBAL INTL_EQUITY_TOKYO': GLOBAL_TOKYO,\
-        'GLOBAL_INTL_EQUITY_SINGAPORE': GLOBAL_SINGAPORE, 'GLOBAL_INTL_EQUITY_HONGKONG':GLOBAL_HONGKONG}
+        'GLOBAL_INTL_EQUITY_SINGAPORE': GLOBAL_SINGAPORE, 'GLOBAL_INTL_EQUITY_HONGKONG':GLOBAL_HONGKONG, 'GLOBAL_INTL_EQUITY_LONDON':GLOBAL_LONDON}
     
     global dicNums
     global grand_Total_position
@@ -201,6 +209,11 @@ def writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY,
             ws.cell(row=starting_row, column=starting_col + 1).value = 'Hong Kong'
             ws.cell(row=starting_row, column=starting_col + 2).value = v
             starting_row += 1
+        elif 'london' in k.lower():
+            ws.cell(row=starting_row, column=starting_col).value = k[:18]
+            ws.cell(row=starting_row, column=starting_col + 1).value = 'London'
+            ws.cell(row=starting_row, column=starting_col + 2).value = v
+            starting_row += 1
         else:
             ws.cell(row=starting_row, column=starting_col).value = k
             ws.cell(row=starting_row, column=starting_col + 2).value = v
@@ -212,15 +225,15 @@ def writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY,
     starting_row += 2
     ws.cell(row=starting_row, column=starting_col).value = 'Total'
 
-    for i in range(8,17):
+    for i in range(8,18):
         co = 'O' + str(i)
         cn = 'N' + str(i)
         ws[co] ='=ROUND('+cn+'/1000,2)'
 
 
     applyFormat(23,ws)
-    ws['N19'] = '=SUM(N8:N16)'
-    ws['O19'] = '=SUM(O8:O16)'
+    ws['N19'] = '=SUM(N8:N17)'
+    ws['O19'] = '=SUM(O8:O17)'
     ws['N20'] = grand_Total_position
     ws['N21'] = '=N19-N20'
     ws['N21'].style = 'Comma'
@@ -272,6 +285,7 @@ def processFromSheet(ws):
     for row in ws.iter_rows(min_row=8, max_row=300, min_col=1, max_col=5, values_only=True):
         if row[0]:
             if 'grand total' in row[0].lower():
+                GRAND_TOTAL = 0
                 GRAND_TOTAL += row[4]
                 grand_Total_position = "=E" + str(row_loc)
         if 'Total'.upper() not in str(row[0]).upper(): # as long as the first row does not contain the word "Total" 
@@ -340,10 +354,12 @@ def calculateFromDic(dic,ws):
     GLOBAL_TOKYO = get_global_tok(dic)
     GLOBAL_SINGAPORE = get_global_sing(dic)
     GLOBAL_HONGKONG = get_global_hk(dic)
+    GLOBAL_LONDON = get_global_london(dic)
+
             
     writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY,\
     GLOBAL_DOMESTIC, GLOBAL_OPPORTUNISTIC, GLOBAL_TOKYO,\
-    GLOBAL_SINGAPORE, GLOBAL_HONGKONG, ws)
+    GLOBAL_SINGAPORE, GLOBAL_HONGKONG, GLOBAL_LONDON, ws)
 
 
 def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
