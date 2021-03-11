@@ -22,6 +22,8 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > # Comparator:
 > ```sh
 > web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
+> 
+
 > To install Java ---> Software Center -----> type "Java" in search area"----> Select "WMCJava"
 > 
 > ```
