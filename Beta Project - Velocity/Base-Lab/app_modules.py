@@ -1,6 +1,6 @@
 ################################################################################
 ##
-## BY: WANDERSON M.PIMENTA
+## BY: Sebastien St Vil
 ## PROJECT MADE WITH: Qt Designer and PyQt5
 ## V: 1.0.0
 ##
