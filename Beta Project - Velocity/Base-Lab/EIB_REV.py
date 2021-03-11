@@ -41,7 +41,7 @@ def getStart(ws):
             break;
     return dataPlacement + 1
 
-def getAUMTemplate(source):
+def getWebRevTemplate(source):
     url = "https://github.com/SebasIvan26/testinghello/blob/master/Templates/REV%20EIB%20Template.xlsx?raw=true"
 
     username = 'kseb0@hotmail.com'
@@ -56,7 +56,7 @@ def getAUMTemplate(source):
 #Load existing spreadsheet
 def checkAndLoad(source):
     #Create active worksheet
-    getAUMTemplate(source)
+    #getWebRevTemplate(source) Downloads Template from github repository -->Disactivated
     try:
         wb = load_workbook(source)
         ws = wb.sheetnames
@@ -132,7 +132,7 @@ def main(dic, bucketDestPath):
     system = platform.system() ##Windows or MAC
     #########################SOURCE FILE LOCATION#################################################
 
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/REVEIBTemp.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\AUM EIB Template.xlsx'
+    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/Original EIB/Templates/REV EIB Template.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\AUM EIB Template.xlsx'
 
     #########################DESTINATION FILE LOCATION#################################################
     destination = source
