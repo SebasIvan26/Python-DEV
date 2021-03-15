@@ -108,23 +108,23 @@ def updateEntryLines(dic, ws):
             ex_ref_ID = str(row[16]).upper()
             ledger = str(row[5])
             if 'CORE_EQUITY' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(dic['CORE_EQUITY_TOTAL'],2)
+                ws.cell(row=row_loc, column=11).value = round(dic['CORE_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'COMPLEX_ALPHA' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(dic['COMPLEX_ALPHA_TOTAL'],2)
+                ws.cell(row=row_loc, column=11).value = round(dic['COMPLEX_ALPHA_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'SPECIAL_EQUITY' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(dic['SPECIAL_EQUITY_TOTAL'],2) if 'SPECIALTY_EQUITY_TOTAL' not in dic else\
+                ws.cell(row=row_loc, column=11).value = round(dic['SPECIAL_EQUITY_TOTAL'],2) if 'SPECIALTY_EQUITY_TOTAL' not in dic else\
                     round(dic['SPECIALTY_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'FIXED_INCOME' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(dic['FIXED_INCOME_TOTAL'],2)
+                ws.cell(row=row_loc, column=11).value = round(dic['FIXED_INCOME_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if 'GLOBAL_INTL' in ex_ref_ID:
-                ws.cell(row=row_loc, column=15).value = round(dic['GLOBAL/INTERNATIONAL_EQUITY_TOTAL'],2)
+                ws.cell(row=row_loc, column=11).value = round(dic['GLOBAL/INTERNATIONAL_EQUITY_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if '79993' in ledger:
-                ws.cell(row=row_loc, column=14).value = round(dic['GRAND_TOTAL'],2)
+                ws.cell(row=row_loc, column=10).value = round(dic['GRAND_TOTAL'],2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue - Contra Revenue"
         row_loc += 1
 
