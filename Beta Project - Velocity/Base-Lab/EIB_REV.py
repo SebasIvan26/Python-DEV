@@ -132,7 +132,7 @@ def main(dic, bucketDestPath):
     system = platform.system() ##Windows or MAC
     #########################SOURCE FILE LOCATION#################################################
 
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/Original EIB/Templates/REV EIB Template.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\AUM EIB Template.xlsx'
+    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/bucket_Tests/Original EIB/Templates/REV EIB Template.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\REV EIB Template.xlsx'
 
     #########################DESTINATION FILE LOCATION#################################################
     destination = source
