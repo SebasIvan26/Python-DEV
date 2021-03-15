@@ -132,6 +132,10 @@ def get_special_equity(dic):
     return amount
 
 def get_global_domestic(dic):
+    print("Testing")
+    print(get_global_bos(dic))
+    print(get_global_sf(dic))
+    print(GLOBAL_OPPORTUNISTIC)
     return get_global_bos(dic) + get_global_sf(dic) - GLOBAL_OPPORTUNISTIC
 
 def calc_isvalid(dic):
