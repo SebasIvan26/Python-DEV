@@ -24,14 +24,14 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > web.comparator.py  ##Implementation of comparator (Please have Java installed for use)
 > 
 
-> To install Java ---> Software Center -----> type "Java" in search area"----> Select "WMCJava"
+> To install Java ---> Software Center -----> type "Java" in search area"----> Select "Oracle JAVA 8"
 > 
 > ```
 > This file creates a table showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. The parser supports PDF, Excel and Word documents.
 > 
-```sh
+
 >  # Cash Finder:
-> 
+> ```sh
 > beta (not yet written)  ##Implementation of Cash Finder 
 > 
 > ```
