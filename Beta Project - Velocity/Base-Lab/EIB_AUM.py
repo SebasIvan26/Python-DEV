@@ -140,10 +140,18 @@ def updateEntryLines(dic, ws):
             if 'GLOBAL_INTL' in ex_ref_ID and 'DOMESTIC' in bu_Data_Audit[BU] and '79997' in ledger:
                 ws.cell(row=row_loc, column=15).value = round(aum.GLOBAL_OPPORTUNISTIC/1000,2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM - OP IVT"
+            if 'GLOBAL_INTL' in ex_ref_ID and 'LONDON' in bu_Data_Audit[BU] and '79998' in ledger:
+                ws.cell(row=row_loc, column=15).value = round(aum.get_global_london(dic)/1000,2)
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
             if '79993' in ledger:
                 ws.cell(row=row_loc, column=14).value = round(aum.GRAND_TOTAL/1000,2)
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT AUM"
         row_loc += 1
+
+    ##Remove London Row if London not part of AUM Bucket
+    if not aum.get_global_london(dic):
+        ws.delete_rows(15,1)
+        ws.cell(row=15,column=3).value = 10
 
 def main(dic, bucketDestPath):
     system = platform.system() ##Windows or MAC

@@ -301,6 +301,7 @@ def processFromSheet(ws):
                 op = row[3].lower()
                 if 'opportunistic invstmnt' in op or 'opportunistic invsmnt'in op: #Account for the fact that Opportunistic is written inconistently in prelim
                     GLOBAL_OPPORTUNISTIC += row[4]
+                    print("Print Global_opportunistic")
                     print(GLOBAL_OPPORTUNISTIC)
 
             #Collecting Column 0 and 1
@@ -367,7 +368,7 @@ def calculateFromDic(dic,ws):
 
 
 def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
-
+    global GLOBAL_OPPORTUNISTIC
     #########################SOURCE FILE LOCATION#################################################
     source = bucketSourcePath
 
@@ -395,7 +396,6 @@ def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
     #TRUE IF THEY ARE EQUAL OTHERWISE FALSE
     calculateFromDic(dic,ws)
 
-
     #CHECK FILE IS SAVED PROPERLY
     checkAndSave(wb, destination)
 
@@ -405,6 +405,10 @@ def main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB):
         eib_aum.main(dic, bucketDestPath)
     else:
         pass
+
+    ##Rest Global Variable so it resets as programs is still at runtime
+    GLOBAL_OPPORTUNISTIC = 0  #<--------Inserted at end of program so that it resets without impacting eib_aum
+
 
     #######Returning dic in order for STAT AUM data to be accessible for EIB Generation
     return dic
