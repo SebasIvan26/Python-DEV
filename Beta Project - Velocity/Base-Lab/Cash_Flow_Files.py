@@ -320,13 +320,13 @@ def processWorksheet2(ws):
         j = str(i)
         top = str(cellTop)
         bottom = str(cellBottom)
-        a = '=' + index1 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        a = '=' + index1 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        b = '=' + index2 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        b = '=' + index2 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
         
-        c = '=' + index3 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        c = '=' + index3 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
         ws[col1+j] = a
