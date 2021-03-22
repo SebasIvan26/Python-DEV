@@ -8,6 +8,7 @@
 ##
 ################################################################################
 
+import platform
 import sys as Sys
 import pandas as pd
 import numpy as np
@@ -385,10 +386,11 @@ def getDataStat(filepath, memoTName):
     return [df1, df2, df3]
 
 def main():
-
+    system = platform.system() ##Windows or MAC
     global dataTab
     #########################SOURCE FILE LOCATION#################################################
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Raw.xlsx'
+    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Raw.xlsx'\
+            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q3\Support\testing.xlsx'
 
     #########################DESTINATION FILE LOCATION#################################################
     #destination = bucketDestPath +'.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath
@@ -419,7 +421,8 @@ def main():
     processWorksheet2(memoTab)
 
 
-    destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow testingRes.xlsx'
+    destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow testingRes.xlsx'\
+            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q3\Support\testingres.xlsx'
 
     
 
