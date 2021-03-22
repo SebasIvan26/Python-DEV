@@ -243,6 +243,7 @@ def writeToFile(COMPLEX_ALPHA, CORE_EQUITY, FIXED_INCOME, SPECIAL_EQUITY,
     ws['N21'].style = 'Comma'
     #Apply custom format to cells (fix cells' lengths and number formats)
     
+    ws.sheet_properties.tabColor = '2F8B1A'
     set_border(ws, 'L8:O21')
 
     if not calc_isvalid(dicNums):
@@ -262,7 +263,17 @@ def checkAndLoad(source):
     #Create active worksheet
     try:
         wb = load_workbook(source)
-        ws = wb.active
+        ws = wb.sheetnames
+        
+        #Ensuring to load the "WRPP" workbook
+        for s in ws:
+            if 'bucket'.upper() not in s.upper() and 'WRPP'.upper() in s.upper():
+                wrpp = s
+            elif 'BUCKET REPORT' in s.upper():
+                ex_wrpp = s
+                #Selecting WRPP Worksheet
+        ws = wb[ex_wrpp]
+        ws2 = wb[wrpp]
     except Exception:
         print("Unable to load file....Please use Valid file format")
         SystemExit()
@@ -270,7 +281,7 @@ def checkAndLoad(source):
         print('Unable to load file....Please enter a valid file path')
         SystemExit()
     print("Source file loaded...")
-
+    
     try:
         return [wb, ws]
     except Exception:

@@ -167,6 +167,8 @@ def checkAndSave(wb,dest):
 def processFromSheet2(ws):
     global dicNums
     applyFormat2(20, ws)
+    ws.sheet_properties.tabColor = 'F98107'
+    
     #Dictionnary to store 'pool name totals' as key and 'Monthly Base Revenue' position's location as values
     dic = {}
     row_loc = 8
@@ -183,6 +185,7 @@ def processFromSheet2(ws):
 def processFromSheet1(ws, dic):
     global dicNums
     applyFormat1(20, ws)
+    ws.sheet_properties.tabColor = '2F8B1A'
     row_loc = 8 #Get the row at which data starts
     dicto = {}
     col1, col2 = 9, 10
