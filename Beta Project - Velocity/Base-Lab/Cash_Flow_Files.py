@@ -319,18 +319,18 @@ def processWorksheet2(ws):
         j = str(i)
         top = str(cellTop)
         bottom = str(cellBottom)
-        a = '=' + index1 + j + '/12*_xlfn.XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        a = '=' + index1 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        b = '=' + index2 + j + '/12*_xlfn.XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        b = '=' + index2 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
         
-        c = '=' + index3 + j + '/12*_xlfn.XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
+        c = '=' + index3 + j + '/12*XLOOKUP(A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        ws[col1+j] = 22####################################################################->a
-        ws[col2+j] = 33#############################################->b
-        ws[col3+j] = 55#########################->c
+        ws[col1+j] = a
+        ws[col2+j] = b
+        ws[col3+j] = c
 
     #Get sum     
     maxim = str(ws.max_row-1)
@@ -345,7 +345,7 @@ def processWorksheet2(ws):
 
 
 def readingData(filepath, memoTName):
-    memo_data_df = pandas.read_excel(filepath, sheet_name=memoTName)
+    memo_data_df = pd.read_excel(filepath, sheet_name=memoTName)
 
     print(memo_data_df)
 
@@ -449,9 +449,9 @@ def main():
     #Load Updated File and Save
     #checkAndLoad2(wb2, destination)
 
-    processWorksheet(pivottab)
+    #processWorksheet(pivottab)
 
-    checkAndSave(wb2, destination)
+    #checkAndSave(wb2, destination)
 
     writeStatsToFile(nbStat, lbStat, ocfStat, destination)
 
