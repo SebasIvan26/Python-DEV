@@ -59,7 +59,8 @@ def applyFormat3(ws, rowtop, rowbottom, colstart, colend):
 
 def checkAndSave(wb,dest):
     wb.save(dest)
-    return wb
+    wb.close()
+    
 
 def duplicateWB(wb, ws):
     global dataTab
@@ -441,7 +442,7 @@ def main():
     print(lbStat)
     print(ocfStat)
 
-    wb2 = checkAndSave(wb, destination)
+    checkAndSave(wb, destination)
 
     #writeStatsToFile(nbStat, lbStat, ocfStat, wb2, destination)
 
