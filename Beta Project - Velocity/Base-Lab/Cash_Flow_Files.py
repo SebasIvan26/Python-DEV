@@ -56,7 +56,7 @@ def applyFormat3(ws, rowtop, rowbottom, colstart, colend):
     for rows in ws.iter_rows(min_row=rowtop, max_row=rowbottom, min_col=colstart, max_col=colend):
         for cell in rows:
             cell.fill = getColorFill(boiteDeCrayon[7])
-            cell.number_format = '#,##0.00_);[Red](#,##0.00)'    
+            cell.number_format = '#,##0.00'   
 
 def checkAndSave(wb,dest):
     wb.save(dest)
