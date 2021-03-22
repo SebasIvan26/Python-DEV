@@ -322,13 +322,13 @@ def processWorksheet2(ws):
         top = str(cellTop)
         bottom = str(cellBottom)
         a = '=' + index1 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            + ':$L$' + top + ',12,0)'
+            ':$L$' + top + ',12,0)'
 
         b = '=' + index2 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            + ':$L$' + top + ',12,0)'
+            ':$L$' + top + ',12,0)'
         
         c = '=' + index3 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            + ':$L$' + top + ',12,0)'
+            ':$L$' + top + ',12,0)'
 
         ws[col1+j] = a
         ws[col2+j] = b
