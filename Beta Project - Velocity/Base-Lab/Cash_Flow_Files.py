@@ -427,15 +427,15 @@ def main():
 
     
     ##Read and Analyze file with Pandas
-    stats_pivot_tables = getDataStat(destination, dataTab)
+    #stats_pivot_tables = getDataStat(destination, dataTab)
 
-    nbStat = stats_pivot_tables[0]
-    lbStat = stats_pivot_tables[1]
-    ocfStat = stats_pivot_tables[2]
+    #nbStat = stats_pivot_tables[0]
+    #lbStat = stats_pivot_tables[1]
+    #ocfStat = stats_pivot_tables[2]
 
-    print(nbStat)
-    print(lbStat)
-    print(ocfStat)
+    #print(nbStat)
+    #print(lbStat)
+    #print(ocfStat)
 
     checkAndSave(wb, destination)
 
