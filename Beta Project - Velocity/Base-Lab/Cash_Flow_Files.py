@@ -321,14 +321,14 @@ def processWorksheet2(ws):
         j = str(i)
         top = str(cellTop)
         bottom = str(cellBottom)
-        a = '=' + index1 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            ':$L$' + top + ',12,0)'
+        a = '=' + index1 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
+             ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        b = '=' + index2 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            ':$L$' + top + ',12,0)'
+        b = '=' + index2 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
+             ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
         
-        c = '=' + index3 + j + '/12*VLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
-            ':$L$' + top + ',12,0)'
+        c = '=' + index3 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
+             ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
         ws[col1+j] = a
         ws[col2+j] = b
@@ -344,12 +344,6 @@ def processWorksheet2(ws):
     ##Aplly Formatting
     applyFormat(23, ws)
     applyFormat3(ws, pstart, int(maxim1), insertColPos, insertColPos+2)
-
-
-def readingData(filepath, memoTName):
-    memo_data_df = pd.read_excel(filepath, sheet_name=memoTName)
-
-    print(memo_data_df)
 
 def writeStatsToFile(nbStat, lbStat, ocfStat, destination):
     try:
@@ -455,7 +449,7 @@ def main():
 
     #checkAndSave(wb2, destination)
 
-    writeStatsToFile(nbStat, lbStat, ocfStat, destination)
+    #writeStatsToFile(nbStat, lbStat, ocfStat, destination)
 
 if __name__ == "__main__":
     main()
