@@ -386,7 +386,7 @@ def main():
     global dataTab
     #########################SOURCE FILE LOCATION#################################################
     source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Raw.xlsx'\
-            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q3\Support\testing.xlsx'
+            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q2\Support\testing.xlsx'
 
     #########################DESTINATION FILE LOCATION#################################################
     #destination = bucketDestPath +'.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath
@@ -418,7 +418,7 @@ def main():
 
 
     destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow testingRes.xlsx'\
-            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q3\Support\testingres.xlsx'
+            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q2\Support\testingres.xlsx'
 
     
 
