@@ -141,9 +141,7 @@ class Functions(MainWindow):
         global cashflowDest
 
         try:
-            if not cashflowPath:
-                print(cashflowPath)
-                print(cashflowDest)
+            if not cashflowPath or cashflowDest:
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
             elif len(cashflowPath) == 0 or len(cashflowDest) == 0:
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
@@ -154,10 +152,10 @@ class Functions(MainWindow):
 
 
         QMessageBox.information(self, "Information", "Please wait, analyzing file......")
-        QMessageBox.information(self, "Information", "ETA: 3 min")
-        cashflow.main(cashflowPath, cashflowDest)
         self.ui.plainTextEdit.insertPlainText("WTC Cash Flow file loaded...\n\n")            
-        self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
+        self.ui.plainTextEdit.insertPlainText("Numbers are being analyzed....\n\n")  
+        self.ui.plainTextEdit.insertPlainText("ETA: 3 min\n\n")  
+        cashflow.main(cashflowPath, cashflowDest)
         self.ui.plainTextEdit.insertPlainText("Formulas are being generated......\n\n")            
         self.ui.plainTextEdit.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
 
