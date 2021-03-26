@@ -123,8 +123,8 @@ class Functions(MainWindow):
         global cashflowPath
         try:
             path = QFileDialog.getOpenFileName(self, "Open Excel file", "", "Excel Files(*);;*xls")
-            cashFlowCurrentPath = path[0]
-            self.ui.linecashflowtEdit_2.setPlaceholderText(cashFlowCurrentPath)
+            cashflowPath = path[0]
+            self.ui.linecashflowtEdit_2.setPlaceholderText(cashflowPath)
         except Exception:
             print("Error, Please Try again here")
     
@@ -142,6 +142,8 @@ class Functions(MainWindow):
 
         try:
             if not cashflowPath:
+                print(cashflowPath)
+                print(cashflowDest)
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
             elif len(cashflowPath) == 0 or len(cashflowDest) == 0:
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
