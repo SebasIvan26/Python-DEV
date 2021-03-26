@@ -183,6 +183,7 @@ def getCellPos(ws):
 
 def getstrtdate(ws):
     global cellTop
+    print(f"Celltop is {cellTop}")
     global strtdate
 
     pos = 'A' + str(cellTop)
@@ -265,7 +266,6 @@ def getColPosition(ws, mot):
 
     for col in ws.iter_cols(min_row=1, max_row=1, min_col=1, max_col=21, values_only=True):
         if col[0]:
-            print(str(col[0]).lower())
             wd = str(col[0]).strip().lower()
             if mot in wd:
                 print(f"{mot} is found in position {insertColPos}")
@@ -330,9 +330,9 @@ def processWorksheet2(ws):
         c = '=' + index3 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        ws[col1+j] = a
-        ws[col2+j] = b
-        ws[col3+j] = c
+        ws[col1+j] = 22
+        ws[col2+j] = 33
+        ws[col3+j] = 11
 
     #Get sum     
     maxim = str(ws.max_row-1)
@@ -385,7 +385,7 @@ def main():
     system = platform.system() ##Windows or MAC
     global dataTab
     #########################SOURCE FILE LOCATION#################################################
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Raw.xlsx'\
+    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Q2 Raw.xlsx'\
             if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q2\Support\testing.xlsx'
 
     #########################DESTINATION FILE LOCATION#################################################

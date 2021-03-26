@@ -72,9 +72,9 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setMinimumWidth(20)
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "Bucket Report", "btn_bucket_report", "url(:/16x16/icons/16x16/cil-chart-line.png)", True)
-        UIFunctions.addNewMenu(self, "Capital Calc Tools", "btn_capital_calc", "url(:/16x16/icons/16x16/cil-browser.png)", True)
+        UIFunctions.addNewMenu(self, "Comparator", "btn_capital_calc", "url(:/16x16/icons/16x16/cil-browser.png)", True)
+        UIFunctions.addNewMenu(self, "Cash Flow File", "btn_cash_flow", "url(:/16x16/icons/16x16/cil-double-quote-sans-right.png)", True)
         UIFunctions.addNewMenu(self, "Cash Finder", "btn_cash_finder", "url(:/16x16/icons/16x16/cil-justify-left.png)", False)
-        
         ##self.ui.btn_toggle_menu.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets))
         ## ==> END ##
 
@@ -186,6 +186,14 @@ class MainWindow(QMainWindow):
             UIFunctions.labelPage(self, "Capital Calc tools")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
+        #WTC Cash FLow Page
+        if btnWidget.objectName() == "btn_cash_flow":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_cash_flow_file)
+            UIFunctions.resetStyle(self, "btn_cash_flow")
+            UIFunctions.labelPage(self, "WTC Cash Flow Files")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
+        
         ######################Testing Functions#######################
         if btnWidget.objectName() == "btn_cash_finder":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_cash)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEaceomn.ui'
+## Form generated from reading UI file 'GUI_BASEXjhTXp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -924,7 +924,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 492, 224))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 224, 224))
         self.horizontalLayout_11 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.plainTextEdit = QPlainTextEdit(self.scrollAreaWidgetContents)
@@ -1530,6 +1530,248 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.addWidget(self.frame_div_content_8)
 
         self.stackedWidget.addWidget(self.page_capitalcalc)
+        self.page_cash_flow_file = QWidget()
+        self.page_cash_flow_file.setObjectName(u"page_cash_flow_file")
+        self.frame_4 = QFrame(self.page_cash_flow_file)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setGeometry(QRect(20, 0, 876, 144))
+        self.frame_4.setStyleSheet(u"border-radius: 5px;")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_16.setSpacing(0)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.frame_div_content_2 = QFrame(self.frame_4)
+        self.frame_div_content_2.setObjectName(u"frame_div_content_2")
+        self.frame_div_content_2.setMinimumSize(QSize(0, 110))
+        self.frame_div_content_2.setMaximumSize(QSize(16777215, 110))
+        self.frame_div_content_2.setStyleSheet(u"background-color: rgb(41, 45, 56);\n"
+"border-radius: 5px;\n"
+"")
+        self.frame_div_content_2.setFrameShape(QFrame.NoFrame)
+        self.frame_div_content_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_div_content_2)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.frame_title_wid_2 = QFrame(self.frame_div_content_2)
+        self.frame_title_wid_2.setObjectName(u"frame_title_wid_2")
+        self.frame_title_wid_2.setMaximumSize(QSize(16777215, 35))
+        self.frame_title_wid_2.setStyleSheet(u"background-color: rgb(39, 44, 54);")
+        self.frame_title_wid_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_title_wid_2.setFrameShadow(QFrame.Raised)
+        self.labelBoxBlenderInstalation_2 = QLabel(self.frame_title_wid_2)
+        self.labelBoxBlenderInstalation_2.setObjectName(u"labelBoxBlenderInstalation_2")
+        self.labelBoxBlenderInstalation_2.setEnabled(True)
+        self.labelBoxBlenderInstalation_2.setGeometry(QRect(12, 2, 281, 31))
+        self.labelBoxBlenderInstalation_2.setFont(font11)
+        self.labelBoxBlenderInstalation_2.setStyleSheet(u"")
+
+        self.verticalLayout_8.addWidget(self.frame_title_wid_2)
+
+        self.frame_content_wid_2 = QFrame(self.frame_div_content_2)
+        self.frame_content_wid_2.setObjectName(u"frame_content_wid_2")
+        self.frame_content_wid_2.setFrameShape(QFrame.NoFrame)
+        self.frame_content_wid_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.frame_content_wid_2)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(-1, -1, -1, 0)
+        self.linecashflowtEdit_2 = QLineEdit(self.frame_content_wid_2)
+        self.linecashflowtEdit_2.setObjectName(u"linecashflowtEdit_2")
+        self.linecashflowtEdit_2.setMinimumSize(QSize(0, 30))
+        self.linecashflowtEdit_2.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.linecashflowtEdit_2.setReadOnly(True)
+        self.linecashflowtEdit_2.setClearButtonEnabled(False)
+
+        self.gridLayout_3.addWidget(self.linecashflowtEdit_2, 0, 0, 1, 1)
+
+        self.labelVersion_4 = QLabel(self.frame_content_wid_2)
+        self.labelVersion_4.setObjectName(u"labelVersion_4")
+        self.labelVersion_4.setStyleSheet(u"color: rgb(98, 103, 111);")
+        self.labelVersion_4.setLineWidth(1)
+        self.labelVersion_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_3.addWidget(self.labelVersion_4, 1, 0, 1, 2)
+
+        self.cash_flow_pushButton_2 = QPushButton(self.frame_content_wid_2)
+        self.cash_flow_pushButton_2.setObjectName(u"cash_flow_pushButton_2")
+        self.cash_flow_pushButton_2.setMinimumSize(QSize(150, 30))
+        self.cash_flow_pushButton_2.setFont(font12)
+        self.cash_flow_pushButton_2.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.cash_flow_pushButton_2.setIcon(icon3)
+
+        self.gridLayout_3.addWidget(self.cash_flow_pushButton_2, 0, 1, 1, 1)
+
+
+        self.horizontalLayout_13.addLayout(self.gridLayout_3)
+
+
+        self.verticalLayout_8.addWidget(self.frame_content_wid_2)
+
+
+        self.verticalLayout_16.addWidget(self.frame_div_content_2)
+
+        self.frame_5 = QFrame(self.page_cash_flow_file)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setGeometry(QRect(20, 150, 876, 250))
+        self.frame_5.setMinimumSize(QSize(0, 150))
+        self.frame_5.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.cash_flow_generate_button = QPushButton(self.frame_5)
+        self.cash_flow_generate_button.setObjectName(u"cash_flow_generate_button")
+        self.cash_flow_generate_button.setFont(font13)
+        self.cash_flow_generate_button.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        icon8 = QIcon()
+        icon8.addFile(u":/16x16/icons/16x16/cil-media-play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.cash_flow_generate_button.setIcon(icon8)
+        self.cash_flow_generate_button.setIconSize(QSize(50, 50))
+
+        self.gridLayout_4.addWidget(self.cash_flow_generate_button, 0, 1, 1, 1)
+
+        self.scrollArea_2 = QScrollArea(self.frame_5)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setStyleSheet(u"QScrollArea {\n"
+"	border: none;\n"
+"	border-radius: 0px;\n"
+"}\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    height: 14px;\n"
+"    margin: 0px 21px 0 21px;\n"
+"	border-radius: 0px;\n"
+"}\n"
+" QScrollBar:vertical {\n"
+"	border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    width: 14px;\n"
+"    margin: 21px 0 21px 0;\n"
+"	border-radius: 0px;\n"
+" }\n"
+"")
+        self.scrollArea_2.setFrameShape(QFrame.NoFrame)
+        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 552, 224))
+        self.horizontalLayout_14 = QHBoxLayout(self.scrollAreaWidgetContents_2)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.cash_flow_plainTextEdit_2 = QPlainTextEdit(self.scrollAreaWidgetContents_2)
+        self.cash_flow_plainTextEdit_2.setObjectName(u"cash_flow_plainTextEdit_2")
+        self.cash_flow_plainTextEdit_2.setMinimumSize(QSize(200, 200))
+        self.cash_flow_plainTextEdit_2.setStyleSheet(u"QPlainTextEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	padding: 10px;\n"
+"}\n"
+"QPlainTextEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QPlainTextEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.cash_flow_plainTextEdit_2.setReadOnly(True)
+
+        self.horizontalLayout_14.addWidget(self.cash_flow_plainTextEdit_2)
+
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.gridLayout_4.addWidget(self.scrollArea_2, 0, 2, 3, 1)
+
+        self.cashflow_savebutton = QPushButton(self.frame_5)
+        self.cashflow_savebutton.setObjectName(u"cashflow_savebutton")
+        self.cashflow_savebutton.setFont(font13)
+        self.cashflow_savebutton.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.cashflow_savebutton.setIcon(icon4)
+        self.cashflow_savebutton.setIconSize(QSize(50, 50))
+
+        self.gridLayout_4.addWidget(self.cashflow_savebutton, 0, 3, 2, 1)
+
+        self.cash_flow_getstats_button = QPushButton(self.frame_5)
+        self.cash_flow_getstats_button.setObjectName(u"cash_flow_getstats_button")
+        self.cash_flow_getstats_button.setFont(font13)
+        self.cash_flow_getstats_button.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        icon9 = QIcon()
+        icon9.addFile(u":/16x16/icons/16x16/cil-chart-line.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.cash_flow_getstats_button.setIcon(icon9)
+        self.cash_flow_getstats_button.setIconSize(QSize(50, 50))
+
+        self.gridLayout_4.addWidget(self.cash_flow_getstats_button, 1, 1, 1, 1)
+
+
+        self.verticalLayout_12.addLayout(self.gridLayout_4)
+
+        self.stackedWidget.addWidget(self.page_cash_flow_file)
         self.page_cash = QWidget()
         self.page_cash.setObjectName(u"page_cash")
         self.cash_calendar = QCalendarWidget(self.page_cash)
@@ -1561,9 +1803,9 @@ class Ui_MainWindow(object):
 "	color: rgb(210, 210, 210);\n"
 "	background-color: rgb(52, 58, 71);\n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton_2.setIcon(icon8)
+        icon10 = QIcon()
+        icon10.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton_2.setIcon(icon10)
         self.labelBoxBlenderInstalation_13 = QLabel(self.page_cash)
         self.labelBoxBlenderInstalation_13.setObjectName(u"labelBoxBlenderInstalation_13")
         self.labelBoxBlenderInstalation_13.setEnabled(True)
@@ -1592,9 +1834,9 @@ class Ui_MainWindow(object):
 "	background-color: rgb(35, 40, 4rgb(64, 152, 255)9);\n"
 "	border: 2px solid rgb(43, 50, 61);\n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u":/20x20/icons/20x20/cil-reload.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_19.setIcon(icon9)
+        icon11 = QIcon()
+        icon11.addFile(u":/20x20/icons/20x20/cil-reload.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_19.setIcon(icon11)
         self.pushButton_19.setIconSize(QSize(50, 50))
         self.calendar_label = QLabel(self.page_cash)
         self.calendar_label.setObjectName(u"calendar_label")
@@ -1870,7 +2112,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1892,8 +2134,8 @@ class Ui_MainWindow(object):
         self.btn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_close.setText("")
-        self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.83", None))
-        self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| Bucket", None))
+        self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"Wellington Management Company", None))
+        self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| Lab", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"GA", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.label.setText("")
@@ -1929,6 +2171,13 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
         self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose Capital Calc File", None))
         self.labelVersion_9.setText(QCoreApplication.translate("MainWindow", u"Update Time Series - Capital Cal", None))
+        self.labelBoxBlenderInstalation_2.setText(QCoreApplication.translate("MainWindow", u"WTC Cash Flow File", None))
+        self.linecashflowtEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose Cash Flow File", None))
+        self.labelVersion_4.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program Files\\WTC\\Cash Flow Files.xlsx", None))
+        self.cash_flow_pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
+        self.cash_flow_generate_button.setText(QCoreApplication.translate("MainWindow", u"Generate File", None))
+        self.cashflow_savebutton.setText(QCoreApplication.translate("MainWindow", u"Saving location", None))
+        self.cash_flow_getstats_button.setText(QCoreApplication.translate("MainWindow", u"Get Statistics", None))
         self.commandLinkButton_2.setText(QCoreApplication.translate("MainWindow", u"CommandLinkButton", None))
         self.commandLinkButton_2.setDescription(QCoreApplication.translate("MainWindow", u"Open External Link", None))
         self.labelBoxBlenderInstalation_13.setText(QCoreApplication.translate("MainWindow", u"Cash Finder", None))
