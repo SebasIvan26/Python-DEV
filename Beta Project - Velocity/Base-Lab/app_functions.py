@@ -19,12 +19,14 @@ from PyQt5.QtCore import *
 ###############################
 import STAT_AUM as aum
 import STAT_REV as rev
+import Cash_Flow_Files as cashflow
 import web_comparator
 from main import *
 
 class Functions(MainWindow):
     bucketSourcePath, bucketDestPath = r"", r""
     pdfPriorPath, pdfCurrentPath = r"", r""
+    cashflowPath, cashflowDest = r"", r""
     AUM_REV = True ##TRUE:AUM <--------> FALSE: REV
     ACTIVATE_EIB = True ##TRUE:Generate EIB <--------> FALSE: No generation
 
@@ -112,13 +114,71 @@ class Functions(MainWindow):
 
         try:
             QMessageBox.information(self, "Information", "Please wait, analyzing file......")
+            QMessageBox.information(self, "Information", "ETA: 30s")
             web_comparator.main(pdfPriorPath, pdfCurrentPath)
         except Exception:
             return
 
+    def chooseCashFlowSource(self):
+        global cashflowPath
+        try:
+            path = QFileDialog.getOpenFileName(self, "Open Excel file", "", "Excel Files(*);;*xls")
+            cashFlowCurrentPath = path[0]
+            self.ui.linecashflowtEdit_2.setPlaceholderText(cashFlowCurrentPath)
+        except Exception:
+            print("Error, Please Try again here")
+    
+    def chooseCashFlowDest(self):
+        global cashflowDest
+        try:
+            path = QFileDialog.getSaveFileName(self, "Save Excel file", "", "Excel Files(*);;*xlsx")
+            cashflowDest = path[0]
+        except Exception:
+            print("Error, Please Try again")
 
-            ########Display User#########
+    def generateCashFlowFile(self):
+        global cashflowPath
+        global cashflowDest
 
+        try:
+            if not cashflowPath:
+                QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
+            elif len(cashflowPath) == 0 or len(cashflowDest) == 0:
+                QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
+                return
+        except Exception:
+            QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
+            return
+
+
+        QMessageBox.information(self, "Information", "Please wait, analyzing file......")
+        QMessageBox.information(self, "Information", "ETA: 3 min")
+        cashflow.main(cashflowPath, cashflowDest)
+        self.ui.plainTextEdit.insertPlainText("WTC Cash Flow file loaded...\n\n")            
+        self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
+        self.ui.plainTextEdit.insertPlainText("Formulas are being generated......\n\n")            
+        self.ui.plainTextEdit.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
+
+    
+    def getCashFlowStats(self):
+        global cashflowDest
+
+        try:
+            if not cashflowDest:
+                QMessageBox.information(self, "Information", "Data for Statistics is not yet available, please generate Cash Flow file")
+            elif len(cashflowPath) == 0 or len(cashflowDest) == 0:
+                QMessageBox.information(self, "Information", "Data for Statistics is not yet available, please generate Cash Flow file")
+                return
+        except Exception:
+            QMessageBox.information(self, "Information", "Data for Statistics is not yet available, please generate Cash Flow file")
+            return
+        
+        QMessageBox.information(self, "Information", "Please wait, getting statistics......")
+        QMessageBox.information(self, "Information", "ETA: 5 min")
+        cashflow.main2(cashflowPath, "Memo")
+        self.ui.plainTextEdit.insertPlainText("Running Pandas libraries...\n\n")            
+        self.ui.plainTextEdit.insertPlainText("extracting stats....\n\n")                               
+        self.ui.plainTextEdit.insertPlainText("Top Clients Cashflow has been generated :\n") 
 
 
 

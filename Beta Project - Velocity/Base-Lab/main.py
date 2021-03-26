@@ -99,6 +99,11 @@ class MainWindow(QMainWindow):
         self.ui.current_pushButton.clicked.connect(lambda: Functions.chooseCurrentPDF(self))
         self.ui.webCompareButton.clicked.connect(lambda: Functions.runComparator(self))
 
+        self.ui.cash_flow_pushButton_2.clicked.connect(lambda: Functions.chooseCashFlowSource(self))
+        self.ui.cashflow_savebutton.clicked.connect(lambda: Functions.chooseCashFlowDest(self))
+        self.ui.cash_flow_generate_button.clicked.connect(lambda: Functions.generateCashFlowFile(self))
+        self.ui.cash_flow_getstats_button.clicked.connect(lambda: Functions.getCashFlowStats(self))
+
 
 
         

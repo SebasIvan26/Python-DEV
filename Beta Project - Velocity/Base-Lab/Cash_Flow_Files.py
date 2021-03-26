@@ -381,15 +381,14 @@ def getDataStat(filepath, memoTName):
 
     return [df1, df2, df3]
 
-def main():
+def main(cashflowPath, cashflowDest):
     system = platform.system() ##Windows or MAC
     global dataTab
     #########################SOURCE FILE LOCATION#################################################
-    source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow Q2 Raw.xlsx'\
-            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q2\Support\testing.xlsx'
+    source = cashflowPath
 
     #########################DESTINATION FILE LOCATION#################################################
-    #destination = bucketDestPath +'.xlsx' if '.xlsx' not in bucketDestPath else bucketDestPath
+    destination = cashflowDest +'.xlsx' if '.xlsx' not in cashflowDest else cashflowDest
 
 
     #CHECK FILE IS LOADED PROPERLY
@@ -415,10 +414,6 @@ def main():
     memoTab = duplicateWB(wb, detailtab)
 
     processWorksheet2(memoTab)
-
-
-    destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/wtc_cash_flows/WTC Cash Flow testingRes.xlsx'\
-            if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\110-Trust (WTC)\Internal Reporting\Board Reports\2021\Q2\Support\testingres.xlsx'
 
     
 
@@ -450,9 +445,11 @@ def main():
     #checkAndSave(wb2, destination)
 
     #writeStatsToFile(nbStat, lbStat, ocfStat, destination)
+    return dataTab
 
 if __name__ == "__main__":
-    main()
+    dataTable = main(cashflowPath, cashflowDest)
+    main2(cashflowDest, "Memo")
 
 
 
