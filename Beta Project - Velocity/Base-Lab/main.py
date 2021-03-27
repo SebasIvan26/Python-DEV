@@ -45,7 +45,8 @@ class MainWindow(QMainWindow):
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
 
         try:
-            self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+            clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+            self.ui.label_time.setText(clock)
         except Exception:
             print("error loading time")
 
@@ -225,7 +226,8 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
 
         try:
-            self.ui.label_time.setText(str(time.strftime("%b %d %Y %-I:%M %p")))
+            clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+            self.ui.label_time.setText(clock)
         except Exception:
             print("error loading time")
 

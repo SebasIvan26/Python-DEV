@@ -88,7 +88,6 @@ def main(cashflowDest):
     print(lbStat)
     print(ocfStat)
 
-    #checkAndSave(wb, destination)
 
     writeStatsToFile(nbStat, lbStat, ocfStat, cashflowDest)
 
@@ -101,7 +100,6 @@ def main(cashflowDest):
     #checkAndSave(wb2, destination)
 
     #writeStatsToFile(nbStat, lbStat, ocfStat, destination)
-    return dataTab
 
 if __name__ == "__main__":
     main(cashflowDest)

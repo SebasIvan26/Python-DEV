@@ -110,7 +110,7 @@ class Functions(MainWindow):
             if not pdfPriorPath or not pdfCurrentPath:
                 QMessageBox.information(self, "Information", "Plese enter Prelim File")
         except Exception:
-            QMessageBox.information(self, "Information", "Plese enter Version 1/Version 2 for comaparison")
+            QMessageBox.information(self, "Information", "Plese enter Version 1/Version 2 for comparison")
             return
 
         try:
@@ -157,6 +157,7 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Numbers are being analyzed....\n\n")  
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("ETA: 3 min\n\n")  
         cashflow.main(cashflowPath, cashflowDest)
+        QMessageBox.information(self, "Information", "Formulas, you can now get statistics")
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Formulas are being generated......\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
 
