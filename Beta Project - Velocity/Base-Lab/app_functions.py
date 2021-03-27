@@ -153,12 +153,12 @@ class Functions(MainWindow):
 
 
         QMessageBox.information(self, "Information", "Please wait, analyzing file......")
-        self.ui.plainTextEdit.insertPlainText("WTC Cash Flow file loaded...\n\n")            
-        self.ui.plainTextEdit.insertPlainText("Numbers are being analyzed....\n\n")  
-        self.ui.plainTextEdit.insertPlainText("ETA: 3 min\n\n")  
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("WTC Cash Flow file loaded...\n\n")            
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Numbers are being analyzed....\n\n")  
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("ETA: 3 min\n\n")  
         cashflow.main(cashflowPath, cashflowDest)
-        self.ui.plainTextEdit.insertPlainText("Formulas are being generated......\n\n")            
-        self.ui.plainTextEdit.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Formulas are being generated......\n\n")            
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
 
     
     def getCashFlowStats(self):
@@ -177,9 +177,9 @@ class Functions(MainWindow):
         QMessageBox.information(self, "Information", "Please wait, getting statistics......")
         QMessageBox.information(self, "Information", "ETA: 5 min")
         getstatsCF.main(cashflowDest)
-        self.ui.plainTextEdit.insertPlainText("Running Pandas libraries...\n\n")            
-        self.ui.plainTextEdit.insertPlainText("extracting stats....\n\n")                               
-        self.ui.plainTextEdit.insertPlainText("Top Clients Cashflow has been generated :\n") 
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Running Pandas libraries...\n\n")            
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("extracting stats....\n\n")                               
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow has been generated :\n") 
 
 
 
