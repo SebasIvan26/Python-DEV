@@ -46,8 +46,8 @@ class MainWindow(QMainWindow):
 
         
         clock2 = time.strftime("%b %d %Y %H:%M")
-        clock = time.strftime("%b %d %Y %-I:%M %p")
-        self.ui.label_time.setText(clock2)
+        clock = time.strftime(r"%b %d %Y %-I:%M %p")
+        self.ui.label_time.setText(clock)
 
 
         self.setWindowTitle('Main Window - GA Lab')
