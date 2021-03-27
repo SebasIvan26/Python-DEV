@@ -45,8 +45,8 @@ class MainWindow(QMainWindow):
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
 
         
-        clock2 = time.strftime("%Y-%m-%d %H:%M")
-        #clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+        clock2 = time.strftime("%b %d %Y %H:%M")
+        clock = time.strftime("%b %d %Y %-I:%M %p")
         self.ui.label_time.setText(clock2)
 
 

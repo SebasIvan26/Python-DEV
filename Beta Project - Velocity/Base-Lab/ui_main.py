@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEKQXXcO.ui'
+## Form generated from reading UI file 'GUI_BASEQXcrPt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -722,7 +722,7 @@ class Ui_MainWindow(object):
         self.label_welcome_usr.setMinimumSize(QSize(0, 109))
         font8 = QFont()
         font8.setFamily(u"Segoe UI")
-        font8.setPointSize(22)
+        font8.setPointSize(18)
         self.label_welcome_usr.setFont(font8)
         self.label_welcome_usr.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
 "border-radius: 10px;\n"
@@ -737,7 +737,7 @@ class Ui_MainWindow(object):
         self.label_time.setGeometry(QRect(50, 230, 791, 41))
         font9 = QFont()
         font9.setFamily(u"Gill Sans")
-        font9.setPointSize(29)
+        font9.setPointSize(20)
         font9.setBold(True)
         font9.setWeight(75)
         self.label_time.setFont(font9)
@@ -1895,7 +1895,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

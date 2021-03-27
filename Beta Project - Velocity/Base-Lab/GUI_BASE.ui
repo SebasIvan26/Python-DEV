@@ -1561,7 +1561,7 @@ QPushButton:pressed {
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="page_home">
                    <widget class="QLabel" name="label_6">
@@ -1652,7 +1652,7 @@ border-radius: 20px;</string>
                     <property name="font">
                      <font>
                       <family>Segoe UI</family>
-                      <pointsize>22</pointsize>
+                      <pointsize>18</pointsize>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -1685,7 +1685,7 @@ color: rgb(105, 107, 134)</string>
                     <property name="font">
                      <font>
                       <family>Gill Sans</family>
-                      <pointsize>29</pointsize>
+                      <pointsize>20</pointsize>
                       <weight>75</weight>
                       <bold>true</bold>
                      </font>
