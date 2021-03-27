@@ -90,7 +90,7 @@ def main(cashflowDest):
 
     #checkAndSave(wb, destination)
 
-    #writeStatsToFile(nbStat, lbStat, ocfStat, wb2, destination)
+    writeStatsToFile(nbStat, lbStat, ocfStat, wb2, cashflowDest)
 
 
     #Load Updated File and Save
