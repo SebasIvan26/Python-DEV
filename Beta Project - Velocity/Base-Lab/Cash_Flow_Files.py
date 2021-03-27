@@ -448,8 +448,7 @@ def main(cashflowPath, cashflowDest):
     return dataTab
 
 if __name__ == "__main__":
-    dataTable = main(cashflowPath, cashflowDest)
-    main2(cashflowDest, "Memo")
+    main(cashflowPath, cashflowDest)
 
 
 

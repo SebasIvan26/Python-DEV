@@ -20,6 +20,7 @@ from PyQt5.QtCore import *
 import STAT_AUM as aum
 import STAT_REV as rev
 import Cash_Flow_Files as cashflow
+import getstatsCashFlow as getstatsCF
 import web_comparator
 from main import *
 
@@ -141,7 +142,7 @@ class Functions(MainWindow):
         global cashflowDest
 
         try:
-            if not cashflowPath or cashflowDest:
+            if not cashflowPath or not cashflowDest:
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
             elif len(cashflowPath) == 0 or len(cashflowDest) == 0:
                 QMessageBox.information(self, "Information", "Plese enter WTC Cash Flow File")
@@ -175,7 +176,7 @@ class Functions(MainWindow):
         
         QMessageBox.information(self, "Information", "Please wait, getting statistics......")
         QMessageBox.information(self, "Information", "ETA: 5 min")
-        cashflow.main2(cashflowPath, "Memo")
+        getstatsCF.main(cashflowDest)
         self.ui.plainTextEdit.insertPlainText("Running Pandas libraries...\n\n")            
         self.ui.plainTextEdit.insertPlainText("extracting stats....\n\n")                               
         self.ui.plainTextEdit.insertPlainText("Top Clients Cashflow has been generated :\n") 
