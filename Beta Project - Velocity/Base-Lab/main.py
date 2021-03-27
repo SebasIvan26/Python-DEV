@@ -45,12 +45,11 @@ class MainWindow(QMainWindow):
         else:
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
 
-        try:
-            clock2 = f"{datetime.datetime.now():%Y-%m-%d}"
-            clock = str(date.today().strftime("%b %d %Y %-I:%M %p"))
-            self.ui.label_time.setText(clock2)
-        except Exception:
-            print("error loading time")
+        
+        
+        clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+        self.ui.label_time.setText(clock)
+
 
         self.setWindowTitle('Main Window - GA Lab')
         UIFunctions.labelTitle(self, 'Main Window - GA Lab')
