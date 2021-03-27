@@ -73,7 +73,7 @@ def getDataStat(filepath, memoTName):
 
     return [df1, df2, df3]
 
-def main(cashflowDest, dataTab):
+def main(cashflowDest):
     system = platform.system() ##Windows or MAC
     #########################SOURCE FILE LOCATION#################################################
     
