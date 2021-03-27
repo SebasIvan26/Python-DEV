@@ -78,7 +78,7 @@ def main(cashflowDest):
     #########################SOURCE FILE LOCATION#################################################
     
     ##Read and Analyze file with Pandas
-    stats_pivot_tables = getDataStat(destination, "Memo")
+    stats_pivot_tables = getDataStat(cashflowDest, "Memo")
 
     nbStat = stats_pivot_tables[0]
     lbStat = stats_pivot_tables[1]
