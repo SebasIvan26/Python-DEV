@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
 
         
         clock2 = time.strftime("%Y-%m-%d %H:%M")
-        clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+        #clock = str(time.strftime("%b %d %Y %-I:%M %p"))
         self.ui.label_time.setText(clock2)
 
 
