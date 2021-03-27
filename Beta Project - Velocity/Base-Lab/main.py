@@ -10,7 +10,6 @@ import sys
 import getpass
 import time
 import platform
-import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
@@ -46,9 +45,9 @@ class MainWindow(QMainWindow):
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
 
         
-        
+        clock2 = time.strftime("%Y-%m-%d %H:%M")
         clock = str(time.strftime("%b %d %Y %-I:%M %p"))
-        self.ui.label_time.setText(clock)
+        self.ui.label_time.setText(clock2)
 
 
         self.setWindowTitle('Main Window - GA Lab')
