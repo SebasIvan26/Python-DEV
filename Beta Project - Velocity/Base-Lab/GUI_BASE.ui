@@ -1561,7 +1561,7 @@ QPushButton:pressed {
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>0</number>
+                   <number>2</number>
                   </property>
                   <widget class="QWidget" name="page_home">
                    <widget class="QLabel" name="label_6">
@@ -1910,7 +1910,7 @@ QLineEdit:focus {
                                   <number>1</number>
                                  </property>
                                  <property name="text">
-                                  <string>Ex: C:Program FilesBlender FoundationBlender 2.82 blender.exe</string>
+                                  <string>Ex: C:Program Files\ WTC\ prelimdata.xls</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2226,7 +2226,7 @@ QPushButton:pressed {
                     </item>
                    </layout>
                   </widget>
-                  <widget class="QWidget" name="page_capitalcalc">
+                  <widget class="QWidget" name="page_comparator">
                    <widget class="QLabel" name="labelBoxBlenderInstalation_10">
                     <property name="enabled">
                      <bool>true</bool>
@@ -2397,7 +2397,7 @@ border-radius: 5px;
                             <string notr="true"/>
                            </property>
                            <property name="text">
-                            <string>*Supported formats: PDF,  Excel,  Word</string>
+                            <string>Supported formats: PDF,  Excel,  Word (Java required)</string>
                            </property>
                           </widget>
                          </widget>
@@ -2755,78 +2755,6 @@ QPushButton:pressed {
                        </property>
                       </widget>
                      </item>
-                    </layout>
-                   </widget>
-                   <widget class="QFrame" name="frame_8">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>370</y>
-                      <width>345</width>
-                      <height>134</height>
-                     </rect>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border-radius: 5px;</string>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_25">
-                     <property name="spacing">
-                      <number>0</number>
-                     </property>
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                    </layout>
-                   </widget>
-                   <widget class="QFrame" name="frame_11">
-                    <property name="geometry">
-                     <rect>
-                      <x>80</x>
-                      <y>370</y>
-                      <width>345</width>
-                      <height>134</height>
-                     </rect>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border-radius: 5px;</string>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_26">
-                     <property name="spacing">
-                      <number>0</number>
-                     </property>
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
                     </layout>
                    </widget>
                   </widget>

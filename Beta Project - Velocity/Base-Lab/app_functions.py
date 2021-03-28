@@ -11,7 +11,8 @@
 ################################################################################
 
 ## ==> GUI FILE
-import sys 
+import sys
+import getpass 
 import traceback
 import logging
 from PyQt5 import QtCore, QtWidgets
@@ -181,9 +182,6 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Running Pandas libraries...\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("extracting stats....\n\n")                               
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow has been generated :\n") 
-
-
-
 
 
 

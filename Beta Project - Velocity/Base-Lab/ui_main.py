@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEQXcrPt.ui'
+## Form generated from reading UI file 'GUI_BASEgDJuxG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1050,9 +1050,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.frame_3)
 
         self.stackedWidget.addWidget(self.page_widgets)
-        self.page_capitalcalc = QWidget()
-        self.page_capitalcalc.setObjectName(u"page_capitalcalc")
-        self.labelBoxBlenderInstalation_10 = QLabel(self.page_capitalcalc)
+        self.page_comparator = QWidget()
+        self.page_comparator.setObjectName(u"page_comparator")
+        self.labelBoxBlenderInstalation_10 = QLabel(self.page_comparator)
         self.labelBoxBlenderInstalation_10.setObjectName(u"labelBoxBlenderInstalation_10")
         self.labelBoxBlenderInstalation_10.setEnabled(True)
         self.labelBoxBlenderInstalation_10.setGeometry(QRect(340, 20, 281, 31))
@@ -1063,7 +1063,7 @@ class Ui_MainWindow(object):
         font15.setWeight(75)
         self.labelBoxBlenderInstalation_10.setFont(font15)
         self.labelBoxBlenderInstalation_10.setStyleSheet(u"")
-        self.frame_9 = QFrame(self.page_capitalcalc)
+        self.frame_9 = QFrame(self.page_comparator)
         self.frame_9.setObjectName(u"frame_9")
         self.frame_9.setGeometry(QRect(10, 50, 876, 144))
         self.frame_9.setStyleSheet(u"border-radius: 5px;")
@@ -1171,7 +1171,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_30.addWidget(self.frame_div_content_9)
 
-        self.frame_10 = QFrame(self.page_capitalcalc)
+        self.frame_10 = QFrame(self.page_comparator)
         self.frame_10.setObjectName(u"frame_10")
         self.frame_10.setGeometry(QRect(10, 160, 876, 144))
         self.frame_10.setStyleSheet(u"border-radius: 5px;")
@@ -1292,27 +1292,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_32.addWidget(self.webCompareButton)
 
-        self.frame_8 = QFrame(self.page_capitalcalc)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setGeometry(QRect(430, 370, 345, 134))
-        self.frame_8.setStyleSheet(u"border-radius: 5px;")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_25 = QHBoxLayout(self.frame_8)
-        self.horizontalLayout_25.setSpacing(0)
-        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
-        self.frame_11 = QFrame(self.page_capitalcalc)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setGeometry(QRect(80, 370, 345, 134))
-        self.frame_11.setStyleSheet(u"border-radius: 5px;")
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_26 = QHBoxLayout(self.frame_11)
-        self.horizontalLayout_26.setSpacing(0)
-        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
-        self.stackedWidget.addWidget(self.page_capitalcalc)
+        self.stackedWidget.addWidget(self.page_comparator)
         self.page_cash_flow_file = QWidget()
         self.page_cash_flow_file.setObjectName(u"page_cash_flow_file")
         self.frame_4 = QFrame(self.page_cash_flow_file)
@@ -1895,7 +1875,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1928,7 +1908,7 @@ class Ui_MainWindow(object):
         self.label_4.setText("")
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"Bucket Report", None))
         self.linebucketEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose File", None))
-        self.labelVersion_3.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program FilesBlender FoundationBlender 2.82 blender.exe", None))
+        self.labelVersion_3.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program Files\\ WTC\\ prelimdata.xls", None))
         self.bucketpushButton.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
         self.bucketcomboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"STAT AUM                    ", None))
         self.bucketcomboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"STAT REV", None))
@@ -1938,7 +1918,7 @@ class Ui_MainWindow(object):
         self.bucketRunButton.setText(QCoreApplication.translate("MainWindow", u"Run Report", None))
         self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Comparator", None))
         self.labelBoxBlenderInstalation_11.setText(QCoreApplication.translate("MainWindow", u"Version 1 : ", None))
-        self.labelBoxBlenderInstalation_16.setText(QCoreApplication.translate("MainWindow", u"*Supported formats: PDF,  Excel,  Word", None))
+        self.labelBoxBlenderInstalation_16.setText(QCoreApplication.translate("MainWindow", u"Supported formats: PDF,  Excel,  Word (Java required)", None))
         self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter File", None))
         self.prior_pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Open", None))
         self.labelBoxBlenderInstalation_12.setText(QCoreApplication.translate("MainWindow", u"Version 2 : ", None))

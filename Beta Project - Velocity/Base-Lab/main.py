@@ -37,8 +37,8 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## SET ==> WINDOW TITLE
-        name = getpass.getuser()
-        name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'slittle': 'Scott', 'eguillen': 'Elzé', 'millens': 'Sarah'}
+        name = getpass.getuser().lower()
+        name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'slittle': 'Scott', 'eguillen': 'Elzé', 'millens': 'Sarah', 'chull':'Chris', 'pcestelle':'Estelle', 'kahiggins':'Kasey','aphillips':'Tony','nlshah':'Neil','rvirdee':'Raj','fkanu':'Fatmata','rdeaguiar':'Rick','eferri':'Eugene', 'etarrant':'Eimhear','lroelofs':'Lars'}
         if name in name_database:
             self.ui.label_welcome_usr.setText('Welcome,   ' + name_database[getpass.getuser()])
         else:
@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setMinimumWidth(20)
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "Bucket Report", "btn_bucket_report", "url(:/16x16/icons/16x16/cil-chart-line.png)", True)
-        UIFunctions.addNewMenu(self, "Comparator", "btn_capital_calc", "url(:/16x16/icons/16x16/cil-browser.png)", True)
+        UIFunctions.addNewMenu(self, "Comparator", "btn_comparator", "url(:/16x16/icons/16x16/cil-browser.png)", True)
         UIFunctions.addNewMenu(self, "Cash Flow File", "btn_cash_flow", "url(:/16x16/icons/16x16/cil-double-quote-sans-right.png)", True)
         UIFunctions.addNewMenu(self, "Cash Finder", "btn_cash_finder", "url(:/16x16/icons/16x16/cil-justify-left.png)", False)
         ##self.ui.btn_toggle_menu.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets))
@@ -186,10 +186,10 @@ class MainWindow(QMainWindow):
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE WIDGETS
-        if btnWidget.objectName() == "btn_capital_calc":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_capitalcalc)
-            UIFunctions.resetStyle(self, "btn_capital_calc")
-            UIFunctions.labelPage(self, "Capital Calc tools")
+        if btnWidget.objectName() == "btn_comparator":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_comparator)
+            UIFunctions.resetStyle(self, "btn_comparator")
+            UIFunctions.labelPage(self, "Comparator")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         #WTC Cash FLow Page
