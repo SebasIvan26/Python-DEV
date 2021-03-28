@@ -335,7 +335,7 @@ def processWorksheet2(ws):
         ws[col3+j] = c
 
     #Get sum     
-    maxim = str(ws.max_row-1)
+    maxim = str(ws.max_row)
     maxim1 = str(ws.max_row+1)
     ws[col1+maxim1] = '=SUM(' + col1 + str(pstart) + ':' + col1 + maxim + ')' 
     ws[col2+maxim1] = '=SUM(' + col2 + str(pstart) + ':' + col2 + maxim + ')' 

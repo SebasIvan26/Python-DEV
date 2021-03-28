@@ -124,7 +124,7 @@ class Functions(MainWindow):
     def chooseCashFlowSource(self):
         global cashflowPath
         try:
-            path = QFileDialog.getOpenFileName(self, "Open Excel file", "", "Excel Files(*);;*xls")
+            path = QFileDialog.getOpenFileName(self, "Open Excel file", "", "Excel Files(*);;*xlsx")
             cashflowPath = path[0]
             self.ui.linecashflowtEdit_2.setPlaceholderText(cashflowPath)
         except Exception:
@@ -154,13 +154,13 @@ class Functions(MainWindow):
 
 
         QMessageBox.information(self, "Information", "Please wait, analyzing file......")
+        QMessageBox.information(self, "Remaining time", "ETA: 3 min")
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("WTC Cash Flow file loaded...\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Numbers are being analyzed....\n\n")  
-        self.ui.cash_flow_plainTextEdit_2.insertPlainText("ETA: 3 min\n\n")  
         cashflow.main(cashflowPath, cashflowDest)
-        QMessageBox.information(self, "Information", "Please convert formulas to values to get statistics")
+        QMessageBox.information(self, "Information", "Please convert formulas to number values in order to obtain statistics")
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Formulas are being generated......\n\n")            
-        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats \n")  
 
     
     def getCashFlowStats(self):
@@ -173,15 +173,15 @@ class Functions(MainWindow):
                 QMessageBox.information(self, "Information", "Data for Statistics is not yet available, please generate Cash Flow file")
                 return
         except Exception:
-            QMessageBox.information(self, "Information", "Data for Statistics is not yet available, please generate Cash Flow file")
+            QMessageBox.information(self, "Information", "Data is not yet available, please generate Cash Flow file")
             return
         
         QMessageBox.information(self, "Information", "Please wait, getting statistics......")
-        QMessageBox.information(self, "Information", "ETA: 5 min")
+        QMessageBox.information(self, "Remaining Time", "ETA: 5 min")
         getstatsCF.main(cashflowDest)
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Running Pandas libraries...\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("extracting stats....\n\n")                               
-        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow has been generated :\n") 
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow have been generated \n") 
 
 
 
