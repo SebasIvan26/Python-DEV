@@ -4,15 +4,32 @@ from openpyxl import load_workbook
 from openpyxl.styles import Border, Side, Font, Alignment
 from openpyxl.utils.cell import get_column_letter
 from openpyxl.styles import Font
-import pyexcel as p
+import xlrd
 import EIB_REV as eib_rev
 
 WRPP_SHEET_NAME = ""
 dicNums = {} #Holds the results for the pools, noot the formulas 
 
-def xlstoxlsxConverted(sourcepath, destpath):
-    p.save_book_as(file_name=sourcepath,\
-    dest_file_name=destpath)
+def xlstoxlsxConverted(src_file_path, dst_file_path):
+    book_xls = xlrd.open_workbook(src_file_path)
+    book_xlsx = Workbook()
+    try:
+        sheet_names = book_xls.sheet_names()[:2] #Only returns the first 2 tabs which is all that we need
+        for sheet_index, sheet_name in enumerate(sheet_names):
+            sheet_xls = book_xls.sheet_by_name(sheet_name)
+            if sheet_index == 0:
+                sheet_xlsx = book_xlsx.active
+                sheet_xlsx.title = sheet_name
+            else:
+                sheet_xlsx = book_xlsx.create_sheet(title=sheet_name)
+
+            for row in range(0, sheet_xls.nrows):
+                for col in range(0, sheet_xls.ncols):
+                    sheet_xlsx.cell(row = row+1 , column = col+1).value = sheet_xls.cell_value(row, col)
+
+        book_xlsx.save(dst_file_path)
+    except Exception:
+        print("Error in conversion")
     print("Successfully Converted\n")
 
 ##Transforms Strings into consistent characters and case

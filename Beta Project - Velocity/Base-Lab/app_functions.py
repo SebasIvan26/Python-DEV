@@ -158,7 +158,7 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Numbers are being analyzed....\n\n")  
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("ETA: 3 min\n\n")  
         cashflow.main(cashflowPath, cashflowDest)
-        QMessageBox.information(self, "Information", "Formulas, you can now get statistics")
+        QMessageBox.information(self, "Information", "Please convert formulas to values to get statistics")
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Formulas are being generated......\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats :\n")  
 
