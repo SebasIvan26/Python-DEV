@@ -158,9 +158,9 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("WTC Cash Flow file loaded...\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Numbers are being analyzed....\n\n")  
         cashflow.main(cashflowPath, cashflowDest)
-        QMessageBox.information(self, "Information", "Please convert formulas to number values in order to obtain statistics")
-        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Formulas are being generated......\n\n")            
-        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please Run 'Get Statistics' to get Top Clients Cash Flow Stats \n")  
+        QMessageBox.information(self, "Information", "File is now generated")
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please convert formulas to number values in order to obtain statistics\n\n")            
+        self.ui.cash_flow_plainTextEdit_2.insertPlainText("Please run 'Get Statistics' to get Top Clients Cash Flow Stats \n")  
 
     
     def getCashFlowStats(self):

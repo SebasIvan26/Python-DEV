@@ -76,7 +76,7 @@ def getDataStat(filepath, memoTName):
 def main(cashflowDest):
     system = platform.system() ##Windows or MAC
     #########################SOURCE FILE LOCATION#################################################
-    cashflowDest = cashflowDest +'.xlsx'
+    cashflowDest = cashflowDest +'.xlsx' if '.xlsx' not in cashflowDest else cashflowDest
     ##Read and Analyze file with Pandas
     stats_pivot_tables = getDataStat(cashflowDest, "Memo")
 
