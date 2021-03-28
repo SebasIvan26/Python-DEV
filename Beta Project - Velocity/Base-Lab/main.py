@@ -44,10 +44,12 @@ class MainWindow(QMainWindow):
         else:
             self.ui.label_welcome_usr.setText('Welcome,   ' + getpass.getuser())
 
-        
-        clock2 = time.strftime("%Y-%b-%d %H:%M")
-        clock = time.strftime("%b %d %Y %I:%M %p")
-        self.ui.label_time.setText(clock)
+        try:
+            clock = time.strftime("%b %d %Y %I:%M %p")
+            self.ui.label_time.setText(clock)
+        except Exception:
+            print("Error loading time")
+
 
 
         self.setWindowTitle('Main Window - GA Lab')
@@ -226,10 +228,10 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
 
         try:
-            clock = str(time.strftime("%b %d %Y %-I:%M %p"))
+            clock = time.strftime("%b %d %Y %I:%M %p")
             self.ui.label_time.setText(clock)
         except Exception:
-            print("error loading time")
+            print("Error loading time")
 
         if event.buttons() == Qt.LeftButton:
             print('Mouse click: LEFT CLICK')
