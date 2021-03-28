@@ -330,7 +330,7 @@ def processWorksheet2(ws):
         c = '=' + index3 + j + '/12*XLOOKUP(@A:A,' + pTabName + '!$A$' + top +\
              ':$A$' + bottom + ',' + pTabName + '!$L$' + top + ':$L$' + bottom + ',1,0)'
 
-        ws[col1+j] = 22
+        ws[col1+j] = a
         ws[col2+j] = b
         ws[col3+j] = c
 
