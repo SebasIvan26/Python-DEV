@@ -3,7 +3,7 @@ import os
 from cx_Freeze import setup, Executable
 
 #ADD FILES
-files = ['icon.ico','fonts/','icons/']
+files = {'include_files':['icon.ico','fonts/','icons/'], 'packages':["os"]}
 
 #TARGET
 target = Executable(
@@ -17,6 +17,6 @@ setup(  name = "GA Lab",
         version = "0.1",
         description = "Report automation tool",
         author = "Sebastien St Vil",
-        options = {'build_exe': {'include_files':files}},
+        options = {'build_exe': files},
         executables = [target]
     )
