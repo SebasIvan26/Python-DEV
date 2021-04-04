@@ -7,16 +7,16 @@ files = ['icon.ico','fonts/','icons/']
 
 #TARGET
 target = Executable(
-    script = "main.py"
-    base = "Win32GUI"
-    icon = "icon.ico"
+    script="main.py",
+    base="Win32GUI",
+    icon="icon.ico"
 )
 
 #SETUP CX FREEZE
 setup(  name = "GA Lab",
         version = "0.1",
         description = "Report automation tool",
-        author = "Sebastien St Vil"
+        author = "Sebastien St Vil",
         options = {'build_exe': {'include_files':files}},
         executables = [target]
     )
