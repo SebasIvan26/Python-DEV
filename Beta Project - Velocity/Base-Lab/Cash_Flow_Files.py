@@ -258,6 +258,9 @@ def processWorksheet(ws):
     ws.cell(row=grand_total_pos, column=ECFcol).fill = getColorFill(boiteDeCrayon[0])
 
     applyFormat(23, ws)
+
+    ###Add Net Client Growth 
+    ##Sum of all three accross --> Same line as Grand Total
     ws.sheet_properties.tabColor = "289C0E" 
 
 #Insert the 3 columns before column labeled "Product"
@@ -344,6 +347,10 @@ def processWorksheet2(ws):
     ##Aplly Formatting
     applyFormat(23, ws)
     applyFormat3(ws, pstart, int(maxim1), insertColPos, insertColPos+2)
+
+    print("Process is done")
+    ######Testing#########
+    #ws.auto_filter.ref = ws.dimensions
 
 def writeStatsToFile(nbStat, lbStat, ocfStat, destination):
     try:

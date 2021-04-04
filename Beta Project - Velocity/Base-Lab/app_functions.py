@@ -182,7 +182,7 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Running Pandas libraries...\n\n")            
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("extracting stats....\n\n")                               
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow have been generated \n") 
-
+        QMessageBox.information(self, "Information", "Top Clients Cashflow have been generated")
 
 
 
