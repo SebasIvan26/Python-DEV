@@ -23,6 +23,7 @@ import STAT_REV as rev
 import Cash_Flow_Files as cashflow
 import getstatsCashFlow as getstatsCF
 import web_comparator
+import userlog
 from main import *
 
 class Functions(MainWindow):
@@ -184,6 +185,11 @@ class Functions(MainWindow):
         self.ui.cash_flow_plainTextEdit_2.insertPlainText("Top Clients Cashflow have been generated \n") 
         QMessageBox.information(self, "Information", "Top Clients Cashflow have been generated")
 
+    def userLog(self):
+        try:
+            userlog.main()
+        except Exception:
+            return
 
 
         ######################## basic logger functionality##############################

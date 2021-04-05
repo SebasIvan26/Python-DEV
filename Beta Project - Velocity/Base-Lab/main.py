@@ -38,6 +38,7 @@ class MainWindow(QMainWindow):
 
         ## SET ==> WINDOW TITLE
         name = getpass.getuser().lower()
+        Functions.userLog(self)
         name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'littls': 'Scott', 'guillne': 'Elzé', 'millns': 'Sarah', 'hullc':'Chris', 'pcestelle':'Estelle', 'higgnk':'Kasey','philla':'Tony','shahn':'Neil','virdeer':'Raj','kanuf':'Fatmata','rdeaguiar':'Rick','ferre':'Eugene', 'tarrante':'Eimhear','roelofse':'Lars'}
         if name in name_database:
             self.ui.label_welcome_usr.setText('Welcome,   ' + name_database[getpass.getuser()])
@@ -50,6 +51,7 @@ class MainWindow(QMainWindow):
         except Exception:
             print("Error loading time")
 
+        
 
 
         self.setWindowTitle('Main Window - GA Lab')
