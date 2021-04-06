@@ -52,6 +52,7 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > GA-Lab would not be the only platform capable of accessing the report within the confines of a desktop App but also Microsoft Excel. This would signify that reports that are typically copy/pasted innumerable times such as the TB on the recon template fall in that category thereby giving ground to further optimize the recon template. The only existing drawback, based on my current tests/understanding, is the unavoidable fact that only advanced reports are accessible through workday services. As it stands TB is a composite report, therefore having recourse to such a feature would require deliberate efforts in transcribing that CR(composite) to a CR(advanced).
 > 
 > Lastly, we should find comfort that in the long run, such efforts will prove to be beneficial when considering the cumulative benefits of time saved and error prevention coupled with the now possiblity of easily applying such feature in other areas having tested and implemented it prior. 
+> Note: execution viable however on hold per meeting with D. Ranfdord due to control liabilty from non-IT supported apps which have been a target of InfoSec and other governing groups.
 
 # RUN FILE:
 main.py
