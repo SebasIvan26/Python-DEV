@@ -12,7 +12,7 @@ def checkAndLoad(path):
         wb = load_workbook(path)
         ws = wb.active #active means last opened sheet
     except Exception:
-        print("Unable to load file....Please use Valid file format")
+        print("Unable to load User Log file")
         SystemExit()
     return [wb,ws]
 
@@ -56,7 +56,7 @@ def main():
     system = platform.system() ##Windows or MAC
 
     path = r'/Users/sebastienstvil/Desktop/log.xlsx'\
-         if system == 'Darwin' else r'C:\Users\stvils\OneDrive - Wellington Management\Documents\GA Lab\GA Lab\Python-DEV\Userlog.xlsx'
+         if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Userlog.xlsx'
 
     
     wbws = checkAndLoad(path)
