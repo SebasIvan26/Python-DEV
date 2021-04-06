@@ -70,21 +70,24 @@ class Functions(MainWindow):
         else:
             self.ui.plainTextEdit.insertPlainText("EIB auto-generation is not activated.\n\n")
 
-        if AUM_REV:
-            aum.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
-            self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
-            self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
-            self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            
-            self.ui.plainTextEdit.insertPlainText("STAT AUM is successfully saved in the below file path:\n\n")
-            self.ui.plainTextEdit.insertPlainText(bucketDestPath +'\n\n')            
+        try:
+            if AUM_REV:
+                aum.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
+                self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
+                self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
+                self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            
+                self.ui.plainTextEdit.insertPlainText("STAT AUM is successfully saved in the below file path:\n\n")
+                self.ui.plainTextEdit.insertPlainText(bucketDestPath +'\n\n')            
 
-        elif not AUM_REV:
-            rev.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
-            self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
-            self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
-            self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            
-            self.ui.plainTextEdit.insertPlainText("STAT REV is successfully saved in the below file path:\n")  
-            self.ui.plainTextEdit.insertPlainText(bucketDestPath +'\n\n')  
+            elif not AUM_REV:
+                rev.main(bucketSourcePath, bucketDestPath, ACTIVATE_EIB)
+                self.ui.plainTextEdit.insertPlainText("Source file loaded...\n\n")            
+                self.ui.plainTextEdit.insertPlainText("Numbers are being verified....\n\n")                     
+                self.ui.plainTextEdit.insertPlainText("File is being generated......\n\n")            
+                self.ui.plainTextEdit.insertPlainText("STAT REV is successfully saved in the below file path:\n")  
+                self.ui.plainTextEdit.insertPlainText(bucketDestPath +'\n\n')
+        except Exception:
+            print("Error detected.....")  
 
     def choosePriorPDF(self):
         global pdfPriorPath
