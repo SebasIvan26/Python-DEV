@@ -125,7 +125,7 @@ def updateEntryLines(dic, ws):
                 ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
             if '79993' in ledger:
                 ws.cell(row=row_loc, column=10).value = round(dic['GRAND_TOTAL'],2)
-                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue - Contra Revenue"
+                ws.cell(row=row_loc, column=16).value = getPrevMonth() + " STAT Revenue"
         row_loc += 1
 
 def main(dic, bucketDestPath):
