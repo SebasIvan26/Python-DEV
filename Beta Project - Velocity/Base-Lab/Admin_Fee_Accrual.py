@@ -144,14 +144,13 @@ def getPos(ws):
         for col_index,val in enumerate(ws[i]):
             strng = str(val.value)
             if isinstance(strng, str):
-                if post_Pos and usd_Pos:
-                    break
                 if 'POST' in strng.upper():
                     post_Pos = col_index + 1
                 elif 'USD' in strng.upper():
                     usd_Pos = col_index + 1
-                elif 'USD' not in strng.upper() and post_Pos >= 13:
-                    usd_Pos = post_Pos + 4
+                if post_Pos and usd_Pos:
+                    break
+
             
     
     a = [post_Pos, usd_Pos]
