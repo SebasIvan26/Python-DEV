@@ -23,6 +23,7 @@ import STAT_REV as rev
 import Cash_Flow_Files as cashflow
 import getstatsCashFlow as getstatsCF
 import Admin_Fee_Accrual as adminfee
+import launchDataAudit
 import web_comparator
 import userlog
 from main import *
@@ -31,9 +32,11 @@ class Functions(MainWindow):
     bucketSourcePath, bucketDestPath = r"", r""
     pdfPriorPath, pdfCurrentPath = r"", r""
     cashflowPath, cashflowDest = r"", r""
+    accrualSourcePath, accrualDest = r"", r""
     AUM_REV = True ##TRUE:AUM <--------> FALSE: REV
     ACTIVATE_EIB = True ##TRUE:Generate EIB <--------> FALSE: No generation
 
+##################################################Bucket Report Implementation########################################################################
     def chooseBucketSource(self):
         global bucketSourcePath
         try:
@@ -90,6 +93,8 @@ class Functions(MainWindow):
         except Exception:
             print("Error detected.....")  
 
+
+#########################################################Comparator Interface Implementation##############################################################
     def choosePriorPDF(self):
         global pdfPriorPath
         try:
@@ -126,6 +131,7 @@ class Functions(MainWindow):
         except Exception:
             return
 
+#################################################Cash Flow Files Interface implementation###############################################################################
     def chooseCashFlowSource(self):
         global cashflowPath
         try:
@@ -194,6 +200,63 @@ class Functions(MainWindow):
             userlog.main()
         except Exception:
             return
+
+
+################################################Accrual Interface Implementation####################################################################
+    def chooseAccrualSource(self):
+        global accrualSourcePath
+        try:
+            path = QFileDialog.getOpenFileName(self, "Open Excel file", "", "Excel Files(*);;*xls")
+            accrualSourcePath = path[0]
+            self.ui.lineaccrualtEdit_2.setPlaceholderText(accrualSourcePath)
+        except Exception:
+            print("Error, Please Try again here")
+
+    def accrualDest(self):
+        global accrualDest
+        try:
+            path = QFileDialog.getSaveFileName(self, "Save Excel file", "", "Excel Files(*);;*xlsx")
+            accrualDest = path[0]
+        except Exception:
+            print("Error, Please Try again")
+
+    def launchDataAudit(self):
+        global ACCRUAL_SELECTED
+        ACCRUAL_SELECTED = self.ui.accrualcomboBox_2.currentText().upper()
+        launchDataAudit.main(ACCRUAL_SELECTED)
+
+    def run_EIB_Accruals(self):
+        global ACCRUAL_SELECTED
+        accruals_list = ['ADMIN FEE']
+        ACCRUAL_SELECTED = self.ui.accrualcomboBox_2.currentText().upper()
+
+        try:
+            if not accrualSourcePath or not accrualDest:
+                QMessageBox.information(self, "Information", "Plese enter Accrual Support File")
+            elif len(accrualSourcePath) == 0 or len(accrualDest) == 0:
+                QMessageBox.information(self, "Information", "Plese enter Accrual Support File")
+                return
+        except Exception:
+            QMessageBox.information(self, "Information", "Plese enter Accrual Support File/Saving location")
+            return
+        
+
+        try:
+            if 'ADMIN' in ACCRUAL_SELECTED and 'FEE' in ACCRUAL_SELECTED:
+                adminfee.main(accrualSourcePath, accrualDest)
+                self.ui.accrualplainTextEdit_2.insertPlainText("Support file loaded...\n\n")            
+                self.ui.accrualplainTextEdit_2.insertPlainText("Loading Spend Categories....\n\n")                     
+                self.ui.accrualplainTextEdit_2.insertPlainText("File is being generated......\n\n")            
+                self.ui.accrualplainTextEdit_2.insertPlainText("Admin Fee Accrual EIB is successfully saved in the below file path:\n\n")
+                self.ui.accrualplainTextEdit_2.insertPlainText(accrualDest +'\n\n')            
+
+        except Exception:
+            self.ui.accrualplainTextEdit_2.insertPlainText("Error detected\n\n")
+            self.ui.accrualplainTextEdit_2.insertPlainText("Please update Data Audit file then try again\n\n")  
+            print("Error detected in Accrual .....")  
+
+
+
 
 
         ######################## basic logger functionality##############################

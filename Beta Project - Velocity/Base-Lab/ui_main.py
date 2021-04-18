@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEgDJuxG.ui'
+## Form generated from reading UI file 'GUI_BASEOblXKA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1106,8 +1106,13 @@ class Ui_MainWindow(object):
         self.labelBoxBlenderInstalation_16 = QLabel(self.frame_title_wid_10)
         self.labelBoxBlenderInstalation_16.setObjectName(u"labelBoxBlenderInstalation_16")
         self.labelBoxBlenderInstalation_16.setEnabled(True)
-        self.labelBoxBlenderInstalation_16.setGeometry(QRect(600, 0, 281, 31))
-        self.labelBoxBlenderInstalation_16.setFont(font1)
+        self.labelBoxBlenderInstalation_16.setGeometry(QRect(500, 0, 281, 31))
+        font17 = QFont()
+        font17.setFamily(u"Segoe UI")
+        font17.setPointSize(8)
+        font17.setBold(True)
+        font17.setWeight(75)
+        self.labelBoxBlenderInstalation_16.setFont(font17)
         self.labelBoxBlenderInstalation_16.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.frame_title_wid_10)
@@ -1293,6 +1298,271 @@ class Ui_MainWindow(object):
         self.verticalLayout_32.addWidget(self.webCompareButton)
 
         self.stackedWidget.addWidget(self.page_comparator)
+        self.page_accrual = QWidget()
+        self.page_accrual.setObjectName(u"page_accrual")
+        self.frame_6 = QFrame(self.page_accrual)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setGeometry(QRect(10, 0, 876, 144))
+        self.frame_6.setStyleSheet(u"border-radius: 5px;")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_17.setSpacing(0)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.frame_div_content_3 = QFrame(self.frame_6)
+        self.frame_div_content_3.setObjectName(u"frame_div_content_3")
+        self.frame_div_content_3.setMinimumSize(QSize(0, 110))
+        self.frame_div_content_3.setMaximumSize(QSize(16777215, 110))
+        self.frame_div_content_3.setStyleSheet(u"background-color: rgb(41, 45, 56);\n"
+"border-radius: 5px;\n"
+"")
+        self.frame_div_content_3.setFrameShape(QFrame.NoFrame)
+        self.frame_div_content_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_div_content_3)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.frame_title_wid_3 = QFrame(self.frame_div_content_3)
+        self.frame_title_wid_3.setObjectName(u"frame_title_wid_3")
+        self.frame_title_wid_3.setMaximumSize(QSize(16777215, 35))
+        self.frame_title_wid_3.setStyleSheet(u"background-color: rgb(39, 44, 54);")
+        self.frame_title_wid_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_title_wid_3.setFrameShadow(QFrame.Raised)
+        self.labelBoxtitle_3 = QLabel(self.frame_title_wid_3)
+        self.labelBoxtitle_3.setObjectName(u"labelBoxtitle_3")
+        self.labelBoxtitle_3.setEnabled(True)
+        self.labelBoxtitle_3.setGeometry(QRect(12, 2, 281, 31))
+        self.labelBoxtitle_3.setFont(font11)
+        self.labelBoxtitle_3.setStyleSheet(u"")
+
+        self.verticalLayout_10.addWidget(self.frame_title_wid_3)
+
+        self.frame_content_wid_3 = QFrame(self.frame_div_content_3)
+        self.frame_content_wid_3.setObjectName(u"frame_content_wid_3")
+        self.frame_content_wid_3.setFrameShape(QFrame.NoFrame)
+        self.frame_content_wid_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_content_wid_3)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(-1, -1, -1, 0)
+        self.lineaccrualtEdit_2 = QLineEdit(self.frame_content_wid_3)
+        self.lineaccrualtEdit_2.setObjectName(u"lineaccrualtEdit_2")
+        self.lineaccrualtEdit_2.setMinimumSize(QSize(0, 30))
+        self.lineaccrualtEdit_2.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.lineaccrualtEdit_2.setReadOnly(True)
+        self.lineaccrualtEdit_2.setClearButtonEnabled(False)
+
+        self.gridLayout_5.addWidget(self.lineaccrualtEdit_2, 0, 0, 1, 1)
+
+        self.labelVersion_5 = QLabel(self.frame_content_wid_3)
+        self.labelVersion_5.setObjectName(u"labelVersion_5")
+        self.labelVersion_5.setStyleSheet(u"color: rgb(98, 103, 111);")
+        self.labelVersion_5.setLineWidth(1)
+        self.labelVersion_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_5.addWidget(self.labelVersion_5, 1, 0, 1, 2)
+
+        self.accrualpushButton_2 = QPushButton(self.frame_content_wid_3)
+        self.accrualpushButton_2.setObjectName(u"accrualpushButton_2")
+        self.accrualpushButton_2.setMinimumSize(QSize(150, 30))
+        self.accrualpushButton_2.setFont(font12)
+        self.accrualpushButton_2.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.accrualpushButton_2.setIcon(icon3)
+
+        self.gridLayout_5.addWidget(self.accrualpushButton_2, 0, 1, 1, 1)
+
+
+        self.horizontalLayout_15.addLayout(self.gridLayout_5)
+
+
+        self.verticalLayout_10.addWidget(self.frame_content_wid_3)
+
+
+        self.verticalLayout_17.addWidget(self.frame_div_content_3)
+
+        self.frame_7 = QFrame(self.page_accrual)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setGeometry(QRect(10, 270, 711, 211))
+        self.frame_7.setMinimumSize(QSize(0, 150))
+        self.frame_7.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.gridLayout_6 = QGridLayout()
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.scrollArea_3 = QScrollArea(self.frame_7)
+        self.scrollArea_3.setObjectName(u"scrollArea_3")
+        self.scrollArea_3.setStyleSheet(u"QScrollArea {\n"
+"	border: none;\n"
+"	border-radius: 0px;\n"
+"}\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    height: 14px;\n"
+"    margin: 0px 21px 0 21px;\n"
+"	border-radius: 0px;\n"
+"}\n"
+" QScrollBar:vertical {\n"
+"	border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    width: 14px;\n"
+"    margin: 21px 0 21px 0;\n"
+"	border-radius: 0px;\n"
+" }\n"
+"")
+        self.scrollArea_3.setFrameShape(QFrame.NoFrame)
+        self.scrollArea_3.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea_3.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_3.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_3 = QWidget()
+        self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 525, 224))
+        self.horizontalLayout_16 = QHBoxLayout(self.scrollAreaWidgetContents_3)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.accrualplainTextEdit_2 = QPlainTextEdit(self.scrollAreaWidgetContents_3)
+        self.accrualplainTextEdit_2.setObjectName(u"accrualplainTextEdit_2")
+        self.accrualplainTextEdit_2.setMinimumSize(QSize(200, 200))
+        self.accrualplainTextEdit_2.setStyleSheet(u"QPlainTextEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	padding: 10px;\n"
+"}\n"
+"QPlainTextEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QPlainTextEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}")
+        self.accrualplainTextEdit_2.setReadOnly(True)
+
+        self.horizontalLayout_16.addWidget(self.accrualplainTextEdit_2)
+
+        self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
+
+        self.gridLayout_6.addWidget(self.scrollArea_3, 0, 1, 3, 1)
+
+        self.accrualSaveButton_2 = QPushButton(self.frame_7)
+        self.accrualSaveButton_2.setObjectName(u"accrualSaveButton_2")
+        self.accrualSaveButton_2.setFont(font13)
+        self.accrualSaveButton_2.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(57, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.accrualSaveButton_2.setIcon(icon4)
+        self.accrualSaveButton_2.setIconSize(QSize(50, 50))
+
+        self.gridLayout_6.addWidget(self.accrualSaveButton_2, 0, 2, 2, 1)
+
+
+        self.verticalLayout_13.addLayout(self.gridLayout_6)
+
+        self.accrualcomboBox_2 = QComboBox(self.page_accrual)
+        self.accrualcomboBox_2.addItem("")
+        self.accrualcomboBox_2.setObjectName(u"accrualcomboBox_2")
+        self.accrualcomboBox_2.setGeometry(QRect(20, 200, 461, 33))
+        self.accrualcomboBox_2.setFont(font6)
+        self.accrualcomboBox_2.setAutoFillBackground(False)
+        self.accrualcomboBox_2.setStyleSheet(u"QComboBox{\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QComboBox:hover{\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QComboBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(39, 44, 54);\n"
+"}")
+        self.accrualcomboBox_2.setIconSize(QSize(16, 16))
+        self.accrualcomboBox_2.setFrame(True)
+        self.labelBoxtitle_4 = QLabel(self.page_accrual)
+        self.labelBoxtitle_4.setObjectName(u"labelBoxtitle_4")
+        self.labelBoxtitle_4.setEnabled(True)
+        self.labelBoxtitle_4.setGeometry(QRect(20, 150, 281, 31))
+        self.labelBoxtitle_4.setFont(font16)
+        self.labelBoxtitle_4.setStyleSheet(u"")
+        self.updateDataAuditButton_2 = QPushButton(self.page_accrual)
+        self.updateDataAuditButton_2.setObjectName(u"updateDataAuditButton_2")
+        self.updateDataAuditButton_2.setGeometry(QRect(710, 140, 171, 51))
+        self.updateDataAuditButton_2.setMinimumSize(QSize(150, 30))
+        self.updateDataAuditButton_2.setFont(font12)
+        self.updateDataAuditButton_2.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(52, 99, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(67, 110, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.updateDataAuditButton_2.setIcon(icon6)
+        self.updateDataAuditButton_2.setIconSize(QSize(16, 16))
+        self.accrualEIBButton = QPushButton(self.page_accrual)
+        self.accrualEIBButton.setObjectName(u"accrualEIBButton")
+        self.accrualEIBButton.setGeometry(QRect(30, 500, 850, 54))
+        self.accrualEIBButton.setFont(font14)
+        self.accrualEIBButton.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(52, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(152, 59, 72);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(157, 65, 80);\n"
+"	border: 2px solid rgb(61, 70, 86);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(35, 40, 49);\n"
+"	border: 2px solid rgb(43, 50, 61);\n"
+"}")
+        self.accrualEIBButton.setIcon(icon5)
+        self.accrualEIBButton.setIconSize(QSize(50, 50))
+        self.stackedWidget.addWidget(self.page_accrual)
         self.page_cash_flow_file = QWidget()
         self.page_cash_flow_file.setObjectName(u"page_cash_flow_file")
         self.frame_4 = QFrame(self.page_cash_flow_file)
@@ -1573,12 +1843,12 @@ class Ui_MainWindow(object):
         self.labelBoxBlenderInstalation_13.setObjectName(u"labelBoxBlenderInstalation_13")
         self.labelBoxBlenderInstalation_13.setEnabled(True)
         self.labelBoxBlenderInstalation_13.setGeometry(QRect(310, 10, 431, 51))
-        font17 = QFont()
-        font17.setFamily(u"Segoe UI")
-        font17.setPointSize(22)
-        font17.setBold(True)
-        font17.setWeight(75)
-        self.labelBoxBlenderInstalation_13.setFont(font17)
+        font18 = QFont()
+        font18.setFamily(u"Segoe UI")
+        font18.setPointSize(22)
+        font18.setBold(True)
+        font18.setWeight(75)
+        self.labelBoxBlenderInstalation_13.setFont(font18)
         self.labelBoxBlenderInstalation_13.setStyleSheet(u"")
         self.pushButton_19 = QPushButton(self.page_cash)
         self.pushButton_19.setObjectName(u"pushButton_19")
@@ -1875,7 +2145,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1925,6 +2195,16 @@ class Ui_MainWindow(object):
         self.lineEdit_11.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter File", None))
         self.current_pushButton.setText(QCoreApplication.translate("MainWindow", u"Open", None))
         self.webCompareButton.setText(QCoreApplication.translate("MainWindow", u"Compare", None))
+        self.labelBoxtitle_3.setText(QCoreApplication.translate("MainWindow", u"Accrual Support file", None))
+        self.lineaccrualtEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose File", None))
+        self.labelVersion_5.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program Files\\ WTC\\ Admin Fee Expense Accrual.xls", None))
+        self.accrualpushButton_2.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
+        self.accrualSaveButton_2.setText(QCoreApplication.translate("MainWindow", u"Saving location", None))
+        self.accrualcomboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Admin Fee Accrual", None))
+
+        self.labelBoxtitle_4.setText(QCoreApplication.translate("MainWindow", u"Please select Multi-BU Accrual:", None))
+        self.updateDataAuditButton_2.setText(QCoreApplication.translate("MainWindow", u"Update Data Audit", None))
+        self.accrualEIBButton.setText(QCoreApplication.translate("MainWindow", u"Generate EIB", None))
         self.labelBoxBlenderInstalation_2.setText(QCoreApplication.translate("MainWindow", u"WTC Cash Flow File", None))
         self.linecashflowtEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose Cash Flow File", None))
         self.labelVersion_4.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program Files\\WTC\\Cash Flow Files.xlsx", None))

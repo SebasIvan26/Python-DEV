@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "Bucket Report", "btn_bucket_report", "url(:/16x16/icons/16x16/cil-chart-line.png)", True)
         UIFunctions.addNewMenu(self, "Comparator", "btn_comparator", "url(:/16x16/icons/16x16/cil-browser.png)", True)
         UIFunctions.addNewMenu(self, "Cash Flow File", "btn_cash_flow", "url(:/16x16/icons/16x16/cil-double-quote-sans-right.png)", True)
-        UIFunctions.addNewMenu(self, "Cash Finder", "btn_cash_finder", "url(:/16x16/icons/16x16/cil-justify-left.png)", False)
+        UIFunctions.addNewMenu(self, "Accruals", "btn_accrual", "url(:/16x16/icons/16x16/cil-justify-left.png)", True)
         ##self.ui.btn_toggle_menu.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets))
         ## ==> END ##
 
@@ -108,6 +108,11 @@ class MainWindow(QMainWindow):
         self.ui.cashflow_savebutton.clicked.connect(lambda: Functions.chooseCashFlowDest(self))
         self.ui.cash_flow_generate_button.clicked.connect(lambda: Functions.generateCashFlowFile(self))
         self.ui.cash_flow_getstats_button.clicked.connect(lambda: Functions.getCashFlowStats(self))
+
+        self.ui.accrualpushButton_2.clicked.connect(lambda: Functions.chooseAccrualSource(self))
+        self.ui.accrualSaveButton_2.clicked.connect(lambda: Functions.accrualDest(self))
+        self.ui.updateDataAuditButton_2.clicked.connect(lambda: Functions.launchDataAudit(self))
+        self.ui.accrualEIBButton.clicked.connect(lambda: Functions.run_EIB_Accruals(self))
 
 
 
@@ -205,10 +210,10 @@ class MainWindow(QMainWindow):
 
         
         ######################Testing Functions#######################
-        if btnWidget.objectName() == "btn_cash_finder":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_cash)
-            UIFunctions.resetStyle(self, "btn_cash_finder")
-            UIFunctions.labelPage(self, "Cash Finder")
+        if btnWidget.objectName() == "btn_accrual":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_accrual)
+            UIFunctions.resetStyle(self, "btn_accrual")
+            UIFunctions.labelPage(self, "Accruals")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
     ## ==> END ##

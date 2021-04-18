@@ -66,7 +66,7 @@ def checkAndLoad_EIB(source):
         for s in ws:
             if 'Import Account'.upper() in s.upper():
                 import_tab = s
-            elif 'line test'.upper() in s.upper():
+            elif 'Journal Entry'.upper() in s.upper():
                 entry_tab = s
                 #Selecting WRPP Worksheet
         ws = wb[import_tab]
@@ -245,7 +245,7 @@ def updateImportAccountingTab(ws):
         row_loc += 1
     applyFormat(ws)
 
-def main():
+def main(accrualSourcePath, accrualDest):
     system = platform.system() ##Windows or MAC
 
 #####################Part 1: Load and Obtain Spend Categories from DATA Audit file###################
@@ -256,8 +256,7 @@ def main():
     data_Audit_Dict = get_Spend_Categories(data_Audit_ws)
 
 ##################Part2: Load WMF Fund Expense Accrual File and EIB Template then write to EIB#####################
-    expense_Accrual_Path = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/WMF Fund Expense Accrual 032021 (Final).xlsm'\
-         if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Data_Audit_-_Spend_Categories.xlsx'
+    expense_Accrual_Path = accrualSourcePath
     
     expense_Accrual_old = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/WMF 0220(UPDATED).xlsx'\
          if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Data_Audit_-_Spend_Categories.xlsx'
@@ -281,8 +280,8 @@ def main():
     #Using Expense Accrual File to Generate EIB Journal Lines 
     processFromAccrual(expense_Accrual_ws, eib_ws2)
 
-    destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/EIB Test Results.xlsx'
-    checkAndSave(eib_wb, destination)
+    accrualDest = accrualDest +'_EIBUpload.xlsx' if '.xlsx' not in accrualDest else accrualDest.replace('.xlsx', '_EIBUpload.xlsx')
+    checkAndSave(eib_wb, accrualDest)
 
 if __name__ == "__main__":
-    main()
+    main(accrualSourcePath, accrualDest)
