@@ -77,9 +77,9 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setMinimumWidth(20)
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "Bucket Report", "btn_bucket_report", "url(:/16x16/icons/16x16/cil-chart-line.png)", True)
+        UIFunctions.addNewMenu(self, "Accruals", "btn_accrual", "url(:/16x16/icons/16x16/cil-justify-left.png)", True)
         UIFunctions.addNewMenu(self, "Comparator", "btn_comparator", "url(:/16x16/icons/16x16/cil-browser.png)", True)
         UIFunctions.addNewMenu(self, "Cash Flow File", "btn_cash_flow", "url(:/16x16/icons/16x16/cil-double-quote-sans-right.png)", True)
-        UIFunctions.addNewMenu(self, "Accruals", "btn_accrual", "url(:/16x16/icons/16x16/cil-justify-left.png)", True)
         ##self.ui.btn_toggle_menu.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets))
         ## ==> END ##
 

@@ -144,6 +144,8 @@ def getPos(ws):
         for col_index,val in enumerate(ws[i]):
             strng = str(val.value)
             if isinstance(strng, str):
+                if post_Pos and usd_Pos:
+                    break
                 if 'POST' in strng.upper():
                     post_Pos = col_index + 1
                 elif 'USD' in strng.upper():
@@ -182,7 +184,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
         if row[0]:
             exp_group_name, currency, post_val, usd_val = row[1], row[2], row[post_col], row[usd_col]
             if 'BU_12900' in row[0].upper() and 'TOTAL' not in row[0].upper():
-                if row[post_col] != 0:
+                if row[post_col] != 0 and round(post_val,2) != 0:
                     print(f"{row[post_col]} position: {row_loc}")
                     eib_ws2.cell(row=row_loc, column=eib_map['header_key']).value = 'WMFOFF129'
                     eib_ws2.cell(row=row_loc, column=eib_map['line_key']).value = row_loc - 5
@@ -194,12 +196,12 @@ def processFromAccrual(accrual_ws, eib_ws2):
                         eib_ws2.cell(row=row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
                         print(f"Unable to match {exp_group_name} in Accrual to Data Audit, Please Update Data Audit")
-                        continue
+                        #continue
                     eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                    if post_val > 0:
+                    if round(post_val,2) > 0:
                         eib_ws2.cell(row=row_loc, column=eib_map['debit']).value = round(post_val,2)
                         eib_ws2.cell(row=row_loc, column=eib_map['ledger_debit_amount']).value = round(usd_val,2)
-                    elif post_val < 0:
+                    elif round(post_val,2) < 0:
                         eib_ws2.cell(row=row_loc, column=eib_map['credit']).value = round(abs(post_val),2)
                         eib_ws2.cell(row=row_loc, column=eib_map['ledger_credit_amount']).value = round(abs(usd_val),2)
                     
@@ -213,8 +215,8 @@ def processFromAccrual(accrual_ws, eib_ws2):
         if row[0]:
             exp_group_name, currency, post_val, usd_val = row[1], row[2], row[post_col], row[usd_col]
             if 'BU_12900' in row[0].upper() and 'TOTAL' not in row[0].upper():
-                if row[post_col] != 0:
-                    print(f"{row[post_col]} position: {bottom_row_loc}")
+                if row[post_col] != 0 and round(post_val,2) != 0:
+                    print(f"{row[post_col]} position: {bottom_row_loc}") 
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['header_key']).value = 'WMFOFF129'
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['line_key']).value = bottom_row_loc - 5
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['company']).value = 'BU_12900'
@@ -225,12 +227,12 @@ def processFromAccrual(accrual_ws, eib_ws2):
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
                         print(f"Unable to match {exp_group_name} in Accrual to Data Audit, Please Update Data Audit")
-                        continue
+                        #continue
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                    if post_val < 0:
+                    if round(post_val,2) < 0:
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['debit']).value = round(abs(post_val),2)
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger_debit_amount']).value = round(abs(usd_val),2)
-                    elif post_val > 0:
+                    elif round(post_val,2) > 0:
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['credit']).value = round(post_val,2)
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger_credit_amount']).value = round(usd_val,2)
                     
