@@ -218,7 +218,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['header_key']).value = 'WMFOFF129'
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['line_key']).value = bottom_row_loc - 5
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['company']).value = 'BU_12900'
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger']).value = 62000
+                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger']).value = 21900
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['currency']).value = currency
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['memo']).value = exp_group_name
                     try:
