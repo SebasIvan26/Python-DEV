@@ -211,7 +211,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
     print(row_loc)
         ###############################################Generate Bottom Half of EIB################################################################
     bottom_row_loc = row_loc
-    for row in accrual_ws.iter_rows(min_row=bottom_row_loc, max_row=300, min_col=1, max_col=46, values_only=True):
+    for row in accrual_ws.iter_rows(min_row=6, max_row=300, min_col=1, max_col=46, values_only=True):
         if row[0]:
             exp_group_name, currency, post_val, usd_val = row[1], row[2], row[post_col], row[usd_col]
             if 'BU_12900' in row[0].upper() and 'TOTAL' not in row[0].upper():
