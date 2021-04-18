@@ -144,7 +144,7 @@ def getPos(ws):
         for col_index,val in enumerate(ws[i]):
             strng = str(val.value)
             if isinstance(strng, str):
-                if 'POST' in strng.upper():
+                if 'POST' in strng.upper() and 'USD' not in strng.upper():
                     post_Pos = col_index + 1
                 elif 'USD' in strng.upper():
                     usd_Pos = col_index + 1
