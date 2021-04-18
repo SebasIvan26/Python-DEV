@@ -150,7 +150,10 @@ def getPos(ws):
                     usd_Pos = col_index + 1
                 if post_Pos and usd_Pos:
                     break
-
+    
+    ##If Unable to find USD column, add 2 to Post col
+    if not usd_Pos:
+        usd_Pos = post_Pos + 2
             
     
     a = [post_Pos, usd_Pos]
