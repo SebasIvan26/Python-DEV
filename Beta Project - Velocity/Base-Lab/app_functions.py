@@ -250,9 +250,9 @@ class Functions(MainWindow):
                 self.ui.accrualplainTextEdit_2.insertPlainText("Admin Fee Accrual EIB is successfully saved in the below file path:\n\n")
                 self.ui.accrualplainTextEdit_2.insertPlainText(accrualDest +'\n\n')            
         except Exception:
-            self.ui.accrualplainTextEdit_2.insertPlainText("Possible erros\n\n")
+            self.ui.accrualplainTextEdit_2.insertPlainText("Possible errors:\n\n")
             self.ui.accrualplainTextEdit_2.insertPlainText("1- If EIB generates, simply update Data audit\n\n")  
-            self.ui.accrualplainTextEdit_2.insertPlainText("2- If EIB does not generate and the error persists, update expense accrual support file by titling column names with 'Post' and 'USD \n\n")  
+            self.ui.accrualplainTextEdit_2.insertPlainText("2- If EIB does not generate and the error persists, update expense accrual support file by naming relevant column names with 'Post' and 'USD \n\n")  
             self.ui.accrualplainTextEdit_2.insertPlainText("See prior month file for example \n\n")  
             print("Error detected in Accrual .....")  
 

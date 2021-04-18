@@ -152,8 +152,8 @@ def getPos(ws):
                     break
     
     ##If Unable to find USD column, add 2 to Post col
-    if not usd_Pos:
-        usd_Pos = post_Pos + 2
+    #if not usd_Pos:
+     #   usd_Pos = post_Pos + 2
             
     
     a = [post_Pos, usd_Pos]
