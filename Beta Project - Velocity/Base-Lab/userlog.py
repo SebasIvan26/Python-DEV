@@ -22,7 +22,7 @@ def checkAndSave(wb,dest):
     except:
         print("Error while saving file")
     
-    print("File is successfully saved in specified file path.")
+    print("User Log: File is successfully saved in specified file path.")
 
 def writeLog(ws):
     name = getpass.getuser().lower()

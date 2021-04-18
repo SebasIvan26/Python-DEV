@@ -170,7 +170,7 @@ def getStart(ws):
     dataPlacement = 1 ##Variable to determine where data starts, essentially the placement
     for row in ws.iter_rows(min_row=0, max_row=300, min_col=1, max_col=8, values_only=True):
         if str(row[7]) != 'None':
-            break;
+            break
         dataPlacement += 1
     return dataPlacement + 1
 
