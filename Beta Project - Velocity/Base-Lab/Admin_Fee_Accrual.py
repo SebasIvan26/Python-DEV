@@ -193,8 +193,8 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     try:
                         eib_ws2.cell(row=row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
-                        print("Unable to match Group name in Accrual to Data Audit, Please Update Data Audit")
-                        return
+                        print(f"Unable to match {exp_group_name} in Accrual to Data Audit, Please Update Data Audit")
+                        continue
                     eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                     if post_val > 0:
                         eib_ws2.cell(row=row_loc, column=eib_map['debit']).value = round(post_val,2)
@@ -224,8 +224,8 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     try:
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
-                        print("Unable to match Group name in Accrual to Data Audit, Please Update Data Audit")
-                        return
+                        print(f"Unable to match {exp_group_name} in Accrual to Data Audit, Please Update Data Audit")
+                        continue
                     eib_ws2.cell(row=bottom_row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                     if post_val < 0:
                         eib_ws2.cell(row=bottom_row_loc, column=eib_map['debit']).value = round(abs(post_val),2)
@@ -281,11 +281,8 @@ def main():
     #Using Expense Accrual File to Generate EIB Journal Lines 
     processFromAccrual(expense_Accrual_ws, eib_ws2)
 
-
-
     destination = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/EIB Test Results.xlsx'
     checkAndSave(eib_wb, destination)
-
 
 if __name__ == "__main__":
     main()
