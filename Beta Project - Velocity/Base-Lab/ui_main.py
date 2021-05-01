@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEOblXKA.ui'
+## Form generated from reading UI file 'GUI_BASEqDqqfe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -924,7 +924,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 492, 224))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 224, 224))
         self.horizontalLayout_11 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.plainTextEdit = QPlainTextEdit(self.scrollAreaWidgetContents)
@@ -1495,6 +1495,7 @@ class Ui_MainWindow(object):
 
         self.accrualcomboBox_2 = QComboBox(self.page_accrual)
         self.accrualcomboBox_2.addItem("")
+        self.accrualcomboBox_2.addItem("")
         self.accrualcomboBox_2.setObjectName(u"accrualcomboBox_2")
         self.accrualcomboBox_2.setGeometry(QRect(20, 200, 461, 33))
         self.accrualcomboBox_2.setFont(font6)
@@ -1732,7 +1733,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 552, 224))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 224, 224))
         self.horizontalLayout_14 = QHBoxLayout(self.scrollAreaWidgetContents_2)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.cash_flow_plainTextEdit_2 = QPlainTextEdit(self.scrollAreaWidgetContents_2)
@@ -2200,7 +2201,8 @@ class Ui_MainWindow(object):
         self.labelVersion_5.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program Files\\ WTC\\ Admin Fee Expense Accrual.xls", None))
         self.accrualpushButton_2.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
         self.accrualSaveButton_2.setText(QCoreApplication.translate("MainWindow", u"Saving location", None))
-        self.accrualcomboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Admin Fee Accrual", None))
+        self.accrualcomboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Admin Fee Accrual - WFS 12900", None))
+        self.accrualcomboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Admin Fee Accrual - WLSA 12101", None))
 
         self.labelBoxtitle_4.setText(QCoreApplication.translate("MainWindow", u"Please select Multi-BU Accrual:", None))
         self.updateDataAuditButton_2.setText(QCoreApplication.translate("MainWindow", u"Update Data Audit", None))

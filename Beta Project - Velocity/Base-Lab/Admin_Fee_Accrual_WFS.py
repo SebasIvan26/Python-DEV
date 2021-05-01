@@ -265,7 +265,7 @@ def main(accrualSourcePath, accrualDest):
     expense_Accrual_old = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/WMF 0220(UPDATED).xlsx'\
          if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Data_Audit_-_Spend_Categories.xlsx'
 
-    eib_Source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/EIB Test.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Admin Fee EIB Template.xlsx'
+    eib_Source = r'/Users/sebastienstvil/Documents/Python/Python-DEV/Beta Project - Velocity/Base-Lab/Testing/Admin Fee accrual/WFS EIB Test.xlsx' if system == 'Darwin' else r'\\prod-corpfile\netshare\GA\000-Common Files\Virtual - GA Lab\cache\Templates\Admin Fee WFS EIB Template.xlsx'
     
     #CHECK EIB FILE IS LOADED PROPERLY
     wbws = checkAndLoad_EIB(eib_Source)

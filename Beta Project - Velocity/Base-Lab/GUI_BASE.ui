@@ -2027,7 +2027,7 @@ QScrollBar:horizontal {
                              <rect>
                               <x>0</x>
                               <y>0</y>
-                              <width>492</width>
+                              <width>224</width>
                               <height>224</height>
                              </rect>
                             </property>
@@ -3182,7 +3182,12 @@ QComboBox QAbstractItemView {
                     </property>
                     <item>
                      <property name="text">
-                      <string>Admin Fee Accrual</string>
+                      <string>Admin Fee Accrual - WFS 12900</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Admin Fee Accrual - WLSA 12101</string>
                      </property>
                     </item>
                    </widget>
@@ -3645,7 +3650,7 @@ QScrollBar:horizontal {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>552</width>
+                            <width>224</width>
                             <height>224</height>
                            </rect>
                           </property>

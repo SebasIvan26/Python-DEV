@@ -22,7 +22,8 @@ import STAT_AUM as aum
 import STAT_REV as rev
 import Cash_Flow_Files as cashflow
 import getstatsCashFlow as getstatsCF
-import Admin_Fee_Accrual as adminfee
+import Admin_Fee_Accrual_WFS as adminfee_wfs
+import Admin_Fee_Accrual_WLSA as adminfee_wlsa
 import launchDataAudit
 import web_comparator
 import userlog
@@ -242,20 +243,27 @@ class Functions(MainWindow):
         
 
         try:
-            if 'ADMIN' in ACCRUAL_SELECTED and 'FEE' in ACCRUAL_SELECTED:
-                adminfee.main(accrualSourcePath, accrualDest)
+            print(ACCRUAL_SELECTED)
+            if 'ADMIN FEE' in ACCRUAL_SELECTED and 'WFS' in ACCRUAL_SELECTED:
+                adminfee_wfs.main(accrualSourcePath, accrualDest)
                 self.ui.accrualplainTextEdit_2.insertPlainText("Support file loaded...\n\n")            
                 self.ui.accrualplainTextEdit_2.insertPlainText("Loading Spend Categories....\n\n")                     
                 self.ui.accrualplainTextEdit_2.insertPlainText("File is being generated......\n\n")            
                 self.ui.accrualplainTextEdit_2.insertPlainText("Admin Fee Accrual EIB is successfully saved in the below file path:\n\n")
-                self.ui.accrualplainTextEdit_2.insertPlainText(accrualDest +'\n\n')            
+                self.ui.accrualplainTextEdit_2.insertPlainText(accrualDest +'\n\n')
+            elif 'ADMIN FEE' in ACCRUAL_SELECTED and 'WLSA' in ACCRUAL_SELECTED:
+                adminfee_wlsa.main(accrualSourcePath, accrualDest)
+                self.ui.accrualplainTextEdit_2.insertPlainText("Support file loaded...\n\n")            
+                self.ui.accrualplainTextEdit_2.insertPlainText("Loading Spend Categories....\n\n")                     
+                self.ui.accrualplainTextEdit_2.insertPlainText("File is being generated......\n\n")            
+                self.ui.accrualplainTextEdit_2.insertPlainText("Admin Fee Accrual EIB is successfully saved in the below file path:\n\n")
+                self.ui.accrualplainTextEdit_2.insertPlainText(accrualDest +'\n\n')          
         except Exception:
             self.ui.accrualplainTextEdit_2.insertPlainText("Possible errors:\n\n")
             self.ui.accrualplainTextEdit_2.insertPlainText("1- If EIB generates, simply update Data audit\n\n")  
             self.ui.accrualplainTextEdit_2.insertPlainText("2- If EIB does not generate and the error persists, update expense accrual support file by naming relevant column names with 'Post' and 'USD \n\n")  
             self.ui.accrualplainTextEdit_2.insertPlainText("See prior month file for example \n\n")  
-            print("Error detected in Accrual .....")  
-
+            print("Error detected in Accrual .....")
 
 
 
