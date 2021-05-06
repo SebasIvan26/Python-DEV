@@ -177,13 +177,13 @@ def closeMatches(exp_group_name):
 def processFromAccrual(accrual_ws, eib_ws2):
     global spend_category_dic
     position_list = getPos(accrual_ws)
-    row_loc = 4
+    row_loc = 6
     post_col, usd_col = position_list[0]-1, position_list[1]-1 #Deduce 1 as tuple indices start at zero
     currency_map = {'USD':0,'CAD':0,'GBP':0,'EUR':0, 'CHF':0,'AED':0,'DKK':0}
     eib_map = {'header_key':2,'line_key':3,'company':5,'ledger':6,'account_set':7,'debit':10,'credit':11,'currency':12\
                         ,'ledger_debit_amount':14,'ledger_credit_amount':15,'memo':16,'cost_center':19,'location':22,'spend_category':25}
     ###############################################Generate Top Half of EIB################################################################
-    for row in accrual_ws.iter_rows(min_row=row_loc, max_row=300, min_col=1, max_col=46, values_only=True):
+    for row in accrual_ws.iter_rows(min_row=row_loc-3, max_row=300, min_col=1, max_col=46, values_only=True):
         if row[0]:
             exp_group_name, currency, post_val, usd_val = row[1], row[2], row[post_col], row[usd_col]
             if 'BU_12101' in row[0].upper() and 'TOTAL' not in row[0].upper():
