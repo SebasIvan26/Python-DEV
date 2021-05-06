@@ -212,10 +212,10 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                     if round(post_val,2) > 0:
                         eib_ws2.cell(row=row_loc, column=eib_map['debit']).value = round(post_val)
-                        eib_ws2.cell(row=row_loc, column=eib_map['ledger_debit_amount']).value = round(usd_val,2)
+                        #eib_ws2.cell(row=row_loc, column=eib_map['ledger_debit_amount']).value = round(usd_val,2)
                     elif round(post_val,2) < 0:
                         eib_ws2.cell(row=row_loc, column=eib_map['credit']).value = round(abs(post_val))
-                        eib_ws2.cell(row=row_loc, column=eib_map['ledger_credit_amount']).value = round(abs(usd_val),2)
+                        #eib_ws2.cell(row=row_loc, column=eib_map['ledger_credit_amount']).value = round(abs(usd_val),2)
                     
                     row_loc += 1
     b = row_loc - 1                
