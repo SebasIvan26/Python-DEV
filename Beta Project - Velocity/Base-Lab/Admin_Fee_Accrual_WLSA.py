@@ -197,13 +197,13 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     eib_ws2.cell(row=row_loc, column=eib_map['cost_center']).value = 52500
                     eib_ws2.cell(row=row_loc, column=eib_map['currency']).value = currency
                     eib_ws2.cell(row=row_loc, column=eib_map['memo']).value = exp_group_name
-                    currency_map['USD'] += round(post_val,2) if "USD" in currency else currency_map['USD']
-                    currency_map['CAD'] += round(post_val,2) if "CAD" in currency else currency_map['CAD']
-                    currency_map['GBP'] += round(post_val,2) if "GBP" in currency else currency_map['GBP']
-                    currency_map['EUR'] += round(post_val,2) if "EUR" in currency else currency_map['EUR']
-                    currency_map['CHF'] += round(post_val,2) if "CHF" in currency else currency_map['CHF']
-                    currency_map['AED'] += round(post_val,2) if "AED" in currency else currency_map['AED']
-                    currency_map['DKK'] += round(post_val,2) if "DKK" in currency else currency_map['DKK']
+                    currency_map['USD'] += round(post_val,2) if "USD" in currency else 0
+                    currency_map['CAD'] += round(post_val,2) if "CAD" in currency else 0
+                    currency_map['GBP'] += round(post_val,2) if "GBP" in currency else 0
+                    currency_map['EUR'] += round(post_val,2) if "EUR" in currency else 0
+                    currency_map['CHF'] += round(post_val,2) if "CHF" in currency else 0
+                    currency_map['AED'] += round(post_val,2) if "AED" in currency else 0
+                    currency_map['DKK'] += round(post_val,2) if "DKK" in currency else 0
                     try:
                         eib_ws2.cell(row=row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
@@ -231,6 +231,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = currency
+                eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = value
                 i+=1
             else:
@@ -239,6 +240,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = currency
+                eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = value
                 i+=1
 
