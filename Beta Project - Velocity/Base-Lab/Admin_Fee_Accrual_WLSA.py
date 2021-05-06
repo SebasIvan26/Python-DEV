@@ -177,8 +177,9 @@ def closeMatches(exp_group_name):
 def processFromAccrual(accrual_ws, eib_ws2):
     global spend_category_dic
     position_list = getPos(accrual_ws)
-    row_loc = 6
+    row_loc = 4
     post_col, usd_col = position_list[0]-1, position_list[1]-1 #Deduce 1 as tuple indices start at zero
+    currency_map = {'USD':0,'CAD':0,'GBP':0,'EUR':0, 'CHF':0,'AED':0,'DKK':0}
     eib_map = {'header_key':2,'line_key':3,'company':5,'ledger':6,'account_set':7,'debit':10,'credit':11,'currency':12\
                         ,'ledger_debit_amount':14,'ledger_credit_amount':15,'memo':16,'cost_center':19,'location':22,'spend_category':25}
     ###############################################Generate Top Half of EIB################################################################
@@ -196,6 +197,13 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     eib_ws2.cell(row=row_loc, column=eib_map['cost_center']).value = 52500
                     eib_ws2.cell(row=row_loc, column=eib_map['currency']).value = currency
                     eib_ws2.cell(row=row_loc, column=eib_map['memo']).value = exp_group_name
+                    currency_map['USD'] += round(post_val,2) if "USD" in currency else currency_map['USD']
+                    currency_map['CAD'] += round(post_val,2) if "CAD" in currency else currency_map['CAD']
+                    currency_map['GBP'] += round(post_val,2) if "GBP" in currency else currency_map['GBP']
+                    currency_map['EUR'] += round(post_val,2) if "EUR" in currency else currency_map['EUR']
+                    currency_map['CHF'] += round(post_val,2) if "CHF" in currency else currency_map['CHF']
+                    currency_map['AED'] += round(post_val,2) if "AED" in currency else currency_map['AED']
+                    currency_map['DKK'] += round(post_val,2) if "DKK" in currency else currency_map['DKK']
                     try:
                         eib_ws2.cell(row=row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
@@ -214,34 +222,27 @@ def processFromAccrual(accrual_ws, eib_ws2):
     set_border(eib_ws2, 'A'+ str(b) + ':AT' + str(b))
     print(row_loc)
         ###############################################Generate Bottom Half of EIB################################################################
-    bottom_row_loc = row_loc
-    for row in accrual_ws.iter_rows(min_row=6, max_row=300, min_col=1, max_col=46, values_only=True):
-        if row[0]:
-            exp_group_name, currency, post_val, usd_val = row[1], row[2], row[post_col], row[usd_col]
-            if 'BU_12101' in row[0].upper() and 'TOTAL' not in row[0].upper():
-                if row[post_col] != 0 and round(post_val,2) != 0:
-                    print(f"{row[post_col]} position: {bottom_row_loc}") 
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['header_key']).value = 'WMFOFF121'
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['line_key']).value = bottom_row_loc - 5
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['company']).value = 'BU_12101'
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger']).value = 21900
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['currency']).value = currency
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['memo']).value = exp_group_name
-                    try:
-                        pass
-                        #eib_ws2.cell(row=bottom_row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
-                    except Exception:
-                        print(f"Unable to match {exp_group_name} in Accrual to Data Audit, Please Update Data Audit")
-                        #continue
-                    eib_ws2.cell(row=bottom_row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                    if round(post_val,2) < 0:
-                        eib_ws2.cell(row=bottom_row_loc, column=eib_map['debit']).value = round(abs(post_val),2)
-                        eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger_debit_amount']).value = round(abs(usd_val),2)
-                    elif round(post_val,2) > 0:
-                        eib_ws2.cell(row=bottom_row_loc, column=eib_map['credit']).value = round(post_val,2)
-                        eib_ws2.cell(row=bottom_row_loc, column=eib_map['ledger_credit_amount']).value = round(usd_val,2)
-                    
-                    bottom_row_loc += 1
+    bottom_row_loc, i = row_loc, 0
+    for cur, value in currency_map.items():
+        if value != 0:
+            if value > 0:
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = currency
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = value
+                i+=1
+            else:
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = currency
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = value
+                i+=1
+
+    
 
 
 def updateImportAccountingTab(ws):
