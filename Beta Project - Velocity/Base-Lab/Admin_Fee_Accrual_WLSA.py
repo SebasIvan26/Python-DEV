@@ -232,7 +232,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = value
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = round(abs(value),2)
                 i+=1
             else:
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
@@ -241,9 +241,8 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = abs(value)
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = round(abs(value),2)
                 i+=1
-
     
 
 
