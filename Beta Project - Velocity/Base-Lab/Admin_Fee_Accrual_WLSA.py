@@ -227,7 +227,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
         if value != 0:
             if value > 0:
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5 + i
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
@@ -236,7 +236,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 i+=1
             else:
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['line_key']).value = bottom_row_loc - 5 + i
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['company']).value = 'BU_12101'
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
