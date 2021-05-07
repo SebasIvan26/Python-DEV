@@ -197,13 +197,13 @@ def processFromAccrual(accrual_ws, eib_ws2):
                     eib_ws2.cell(row=row_loc, column=eib_map['cost_center']).value = 52500
                     eib_ws2.cell(row=row_loc, column=eib_map['currency']).value = currency
                     eib_ws2.cell(row=row_loc, column=eib_map['memo']).value = exp_group_name
-                    currency_map['USD'] += round(post_val) if "USD" in currency else 0
-                    currency_map['CAD'] += round(post_val) if "CAD" in currency else 0
-                    currency_map['GBP'] += round(post_val) if "GBP" in currency else 0
-                    currency_map['EUR'] += round(post_val) if "EUR" in currency else 0
-                    currency_map['CHF'] += round(post_val) if "CHF" in currency else 0
-                    currency_map['AED'] += round(post_val) if "AED" in currency else 0
-                    currency_map['DKK'] += round(post_val) if "DKK" in currency else 0
+                    currency_map['USD'] += round(post_val,2) if "USD" in currency else 0
+                    currency_map['CAD'] += round(post_val,2) if "CAD" in currency else 0
+                    currency_map['GBP'] += round(post_val,2) if "GBP" in currency else 0
+                    currency_map['EUR'] += round(post_val,2) if "EUR" in currency else 0
+                    currency_map['CHF'] += round(post_val,2) if "CHF" in currency else 0
+                    currency_map['AED'] += round(post_val,2) if "AED" in currency else 0
+                    currency_map['DKK'] += round(post_val,2) if "DKK" in currency else 0
                     try:
                         eib_ws2.cell(row=row_loc, column=eib_map['spend_category']).value = spend_category_dic[closeMatches(exp_group_name)]
                     except Exception:
@@ -211,10 +211,10 @@ def processFromAccrual(accrual_ws, eib_ws2):
                         #continue
                     eib_ws2.cell(row=row_loc, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
                     if round(post_val,2) > 0:
-                        eib_ws2.cell(row=row_loc, column=eib_map['debit']).value = round(post_val)
+                        eib_ws2.cell(row=row_loc, column=eib_map['debit']).value = round(abs(post_val),2)
                         #eib_ws2.cell(row=row_loc, column=eib_map['ledger_debit_amount']).value = round(usd_val,2)
                     elif round(post_val,2) < 0:
-                        eib_ws2.cell(row=row_loc, column=eib_map['credit']).value = round(abs(post_val))
+                        eib_ws2.cell(row=row_loc, column=eib_map['credit']).value = round(abs(post_val),2)
                         #eib_ws2.cell(row=row_loc, column=eib_map['ledger_credit_amount']).value = round(abs(usd_val),2)
                     
                     row_loc += 1
@@ -232,7 +232,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = round(abs(value))
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['credit']).value = round(abs(value),2)
                 i+=1
             else:
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['header_key']).value = 'WMFOFF121'
@@ -241,7 +241,7 @@ def processFromAccrual(accrual_ws, eib_ws2):
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['ledger']).value = 21900
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['currency']).value = cur
                 eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['account_set']).value = 'WMG_FIN_CHILD_ACCOUNT_SET'
-                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = round(abs(value))
+                eib_ws2.cell(row=bottom_row_loc + i, column=eib_map['debit']).value = round(abs(value),2)
                 i+=1
     
 
