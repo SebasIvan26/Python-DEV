@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         ## SET ==> WINDOW TITLE
         name = getpass.getuser().lower()
         Functions.userLog(self)
-        name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'littls': 'Scott', 'guille': 'Elzé', 'millns': 'Sarah', 'hullc':'Chris', 'pierre':'Estelle', 'higgik':'Kasey','philla':'Tony','shahn':'Neil','virdeer':'Raj','kanuf':'Fatmata','deagur':'Rick','ferrie':'Eugene', 'tarrae':'Eimhear','roelol':'Lars'}
+        name_database = {'stvils': 'Seb', 'sebastienstvil': 'Seb', 'littls': 'Scott', 'guille': 'Elzé', 'millns': 'Sarah', 'hullc':'Chris', 'pierre':'Estelle', 'higgik':'Kasey','philla':'Tony','shahnl':'Neil','virdeer':'Raj','kanufa':'Fatmata','deagur':'Rick','ferrie':'Eugene', 'tarrae':'Eimhear','roelol':'Lars'}
         if name in name_database:
             self.ui.label_welcome_usr.setText('Welcome,   ' + name_database[getpass.getuser()])
         else:
