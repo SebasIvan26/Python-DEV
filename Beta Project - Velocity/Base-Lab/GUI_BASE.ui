@@ -2027,7 +2027,7 @@ QScrollBar:horizontal {
                              <rect>
                               <x>0</x>
                               <y>0</y>
-                              <width>224</width>
+                              <width>492</width>
                               <height>224</height>
                              </rect>
                             </property>
@@ -3192,7 +3192,7 @@ QComboBox QAbstractItemView {
                     </item>
                     <item>
                      <property name="text">
-                      <string>Tax Currency reclass</string>
+                      <string>Tax Currency Reclass (BD8)</string>
                      </property>
                     </item>
                    </widget>
@@ -3655,7 +3655,7 @@ QScrollBar:horizontal {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>552</width>
+                            <width>224</width>
                             <height>224</height>
                            </rect>
                           </property>
