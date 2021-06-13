@@ -238,7 +238,8 @@ class Functions(MainWindow):
                 QMessageBox.information(self, "Information", "Plese enter Journal entry Support File")
                 return
         except Exception:
-            QMessageBox.information(self, "Information", "Plese enter Journal Entry Support File/Saving location") return
+            QMessageBox.information(self, "Information", "Plese enter Journal Entry Support File/Saving location") 
+            return
         
 
         try:
