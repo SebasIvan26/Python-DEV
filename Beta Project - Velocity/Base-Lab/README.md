@@ -8,8 +8,9 @@
 
 GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also uploaded my Virtual Environment to provide more clarity on the multitude of modules and dependencies that were used.
 
-# Reporting files:
+# Reporting analysis automation:
 > ```sh
+> Analysis and extraction of WTC pools data
 > STAT_REV.py   ##STAT REV implementation 
 > STAT_AUM.py   ##STAT AUM implementation
 > EIB_AUM.py   ##EIB generation for STAT AUM 
@@ -18,6 +19,23 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 >*STAT AUM and STAT REV are automatically generated. Both files are able to automatically detect whether there is an error in the file provided by Rev in addition to calculating the output. Moreover, references to cells are added in order to provide trails for the calculations.
 >
 > *EIB for AUM and REV are both contingent upon the STAT excel files output. The accounting date and all other fileds (ex: memo) are automatically adjusted. No intervention is needed.
+
+> # Admin Fee Accrual:
+> ```sh
+> #Analysis of Spend Category, Currency etc....
+> #Pattern recognition used to generate worktags
+> 
+> Luxembourg Admin Fee accrual   ##EIB generation
+> WFS Admin Fee accrual   ##EIB generation
+> ```
+
+> # WTC Cash Flow File:
+> ```sh
+> Generates insights into NB, LB, OCF based on data originating from Revport
+
+>Recognizes quarter and assigns appropriate basis points. No manual intervention
+
+> ```
 
 > # Comparator:
 > ```sh
@@ -55,6 +73,8 @@ GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also
 > 
 > 
 > Note: execution viable however on hold per meeting with D. Ranfdord due to control liabilty from non-IT supported apps which have been a target of InfoSec and other governing groups.
+
+>####Another approach to the above is by accessing a database containing all the expected information. On one end, the data would not be a live stream however the data can be frequently updated to simulate such effect. Lastly, the complexity of this implementation can be subtantially lower. 
 
 # RUN FILE:
 main.py
