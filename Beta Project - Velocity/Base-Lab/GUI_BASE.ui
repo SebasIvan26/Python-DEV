@@ -1679,7 +1679,7 @@ color: rgb(105, 107, 134)</string>
                       <x>50</x>
                       <y>230</y>
                       <width>791</width>
-                      <height>41</height>
+                      <height>71</height>
                      </rect>
                     </property>
                     <property name="font">
@@ -1709,9 +1709,9 @@ color: rgb(74, 125, 216)</string>
                     <property name="geometry">
                      <rect>
                       <x>50</x>
-                      <y>260</y>
+                      <y>290</y>
                       <width>791</width>
-                      <height>311</height>
+                      <height>281</height>
                      </rect>
                     </property>
                     <property name="font">
@@ -2875,7 +2875,7 @@ border-radius: 5px;
                             <string notr="true"/>
                            </property>
                            <property name="text">
-                            <string>Accrual Support file</string>
+                            <string>JE Support file</string>
                            </property>
                           </widget>
                          </widget>
@@ -3059,7 +3059,7 @@ QScrollBar:horizontal {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>525</width>
+                            <width>539</width>
                             <height>224</height>
                            </rect>
                           </property>
@@ -3190,6 +3190,11 @@ QComboBox QAbstractItemView {
                       <string>Admin Fee Accrual - WLSA 12101</string>
                      </property>
                     </item>
+                    <item>
+                     <property name="text">
+                      <string>Tax Currency reclass</string>
+                     </property>
+                    </item>
                    </widget>
                    <widget class="QLabel" name="labelBoxtitle_4">
                     <property name="enabled">
@@ -3215,7 +3220,7 @@ QComboBox QAbstractItemView {
                      <string notr="true"/>
                     </property>
                     <property name="text">
-                     <string>Please select Multi-BU Accrual:</string>
+                     <string>Please select Journal Entry:</string>
                     </property>
                    </widget>
                    <widget class="QPushButton" name="updateDataAuditButton_2">
@@ -3650,7 +3655,7 @@ QScrollBar:horizontal {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>224</width>
+                            <width>552</width>
                             <height>224</height>
                            </rect>
                           </property>
