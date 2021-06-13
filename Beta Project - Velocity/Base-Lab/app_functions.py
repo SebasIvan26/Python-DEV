@@ -233,13 +233,12 @@ class Functions(MainWindow):
 
         try:
             if not accrualSourcePath or not accrualDest:
-                QMessageBox.information(self, "Information", "Plese enter Accrual Support File")
+                QMessageBox.information(self, "Information", "Plese enter Journal entry Support File")
             elif len(accrualSourcePath) == 0 or len(accrualDest) == 0:
-                QMessageBox.information(self, "Information", "Plese enter Accrual Support File")
+                QMessageBox.information(self, "Information", "Plese enter Journal entry Support File")
                 return
         except Exception:
-            QMessageBox.information(self, "Information", "Plese enter Accrual Support File/Saving location")
-            return
+            QMessageBox.information(self, "Information", "Plese enter Journal Entry Support File/Saving location") return
         
 
         try:
