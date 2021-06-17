@@ -4,7 +4,8 @@
 > 
 > Please see the below in order to navigate the attached files!
 
->https://github.com/SebasIvan26/Python-DEV/blob/master/Beta%20Project%20-%20Velocity/Base-Lab/GA%20Lab%20preview.jpg
+>![GA Lab preview](https://user-images.githubusercontent.com/56465638/122435636-2a67ed80-cf66-11eb-81e4-a8986b4d0852.jpg)
+
 
 GA-Lab is created mostly using Python, Qt Designer and PySide2 however I've also uploaded my Virtual Environment to provide more clarity on the multitude of modules and dependencies that were used.
 
